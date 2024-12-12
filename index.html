@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Store</title>
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Simple line icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+    </head>
+<body class="bg-gray-50 font-sans leading-normal tracking-normal">
+
+  <!-- Navbar -->
+<nav class="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-md fixed top-0 w-full z-40">
+  <div class="container mx-auto flex justify-between items-center py-4 px-8">
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-2">
+          <img src="Micro Store  logo.png" alt="Humsafar Weddings Logo" class="h-10 w-auto ">
+          <span class="text-2xl font-bold text-[#d97706] font-serif hover:text-pink-500" style="font-family: Playfair Display, serif;">Micro Store</span>
+      </a>
+
+      <!-- Hamburger Menu Button (Visible on Small Screens) -->
+      <button id="menu-toggle" class="block md:hidden bg-white text-[#d97706] w-10 h-10 rounded-full shadow-md flex items-center justify-center" aria-label="Open Menu">
+          <i class="fas fa-bars text-xl"></i>
+      </button>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="text-gray-700 hover:text-pink-500">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-pink-500">About</a>
+          <a href="#services" class="text-gray-700 hover:text-pink-500">Services</a>
+          <a href="#portfolio" class="text-gray-700 hover:text-pink-500">mATM</a>
+          <a href="#testimonial-slider" class="text-gray-700 hover:text-pink-500">Review</a>
+          <a href="#contact" class="text-gray-700 hover:text-pink-500">Contact</a>
+      </div>
+  </div>
+</nav>
+
+<!-- Sidebar Navigation -->
+<nav id="sidebar-wrapper" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+  <div class="flex flex-col h-full justify-between">
+    <!-- Close Button -->
+    
+      <!-- Sidebar Logo and Links -->
+      <ul class="flex flex-col items-center space-y-6 py-8">
+        <button id="menu-close" class="bg-white text-[#d97706] w-10 h-10 rounded-full shadow-md flex items-center justify-center mx-8 mb-8 hover:bg-pink-500" aria-label="Close Menu">
+          <i class="fas fa-arrow-right text-xl"></i>
+      </button>
+      <li><a href="#home" class="text-gray-700 hover:text-pink-500">Home</a></li>
+      <li><a href="#about" class="text-gray-700 hover:text-pink-500">About</a></li>
+          <li><a href="#services" class="text-gray-700 hover:text-pink-500">Services</a></li>
+          
+          <li><a href="#portfolio" class="text-gray-700 hover:text-pink-500">mATM</a></li>
+          <li><a href="#testimonial-slider" class="text-gray-700 hover:text-pink-500">Review</a></li>
+          <li><a href="#contact" class="text-gray-700 hover:text-pink-500">Contact</a></li>
+      </ul>
+
+      
+  </div>
+</nav>
+
+  
+
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-black" id="home">
+      <div id="hero-slider" class="absolute inset-0 w-full h-full overflow-hidden">
+          <!-- Slide 1 -->
+          <div class="absolute inset-0 h-full w-full bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('tec.jpg');"></div>
+          <!-- Slide 2 -->
+         
+      </div>
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+          <h1 class="text-6xl font-bold mb-4">The Micro Store</h1>
+          <p class="text-xl mb-8">A Retail Services Last Mile Link</p>
+          <a href="#services" class="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-full font-bold transition transform hover-grow">Discover Our Services</a>
+      </div>
+  </section>
+  <!-- About-->
+  <section class="content-section bg-light" id="about" style="background-image: url('tec3.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
+    <div class="container px-4 px-lg-5 text-center">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-10 text-white">
+                <h2>The Micro Store - a complete retail services point</h2>
+                <p class="lead mb-5">
+                    Financial services, logistics support, citizen services and a lot more;<br>
+                    your friendly neighborhood Store</a>
+                    !
+                </p>
+                <a class="btn btn-light btn-xl" href="#services">What We Offer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+  <!-- Services Section -->
+<!-- Services-->
+<section class="content-section bg-primary text-white text-center" id="services">
+  <div class="container px-4 px-lg-5">
+    <div class="content-section-heading">
+      <h3 class="text-secondary mb-0">Services</h3>
+      <h2 class="mb-5">What We Offer</h2>
+    </div>
+    <div class="service-items">
+      <div class="service-item">
+        <span class="service-icon rounded-circle mx-auto mb-3"><i class="fa-regular fa-money-bill-1"></i></span>
+        <h4><strong>mATM</strong></h4>
+        <p class="text-faded mb-0">Banking, Insurance, Loans, Securities, Payments, Bills, Recharges, Remittances...</p>
+      </div>
+      <div class="service-item">
+        <span class="service-icon rounded-circle mx-auto mb-3"><i class="fa-solid fa-truck-fast"></i></span>
+        <h4><strong>Logistics</strong></h4>
+        <p class="text-faded mb-0">Pick up and drop points, last mile delivery, micro warehousing</p>
+      </div>
+      <div class="service-item">
+        <span class="service-icon rounded-circle mx-auto mb-3"><i class="fa-solid fa-at"></i></span>
+        <h4><strong>e-Commerce</strong></h4>
+        <p class="text-faded mb-0">
+          Nearest delivery and service points
+        </p>
+      </div>
+      <div class="service-item">
+        <span class="service-icon rounded-circle mx-auto mb-3"><i class="fa-solid fa-bell-concierge"></i></span>
+        <h4><strong>Citizen Services</strong></h4>
+        <p class="text-faded mb-0">Registrations, applications, updates, some inquiries too..</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-gray-50 text-gray-700" id="portfolio">
+  <div class="container mx-auto px-4">
+    <div class="text-center">
+      <h3 class="text-lg text-gray-500 mb-2">mATM</h3>
+      <h2 class="text-3xl font-bold text-gray-700 mb-8">Financial Services</h2>
+    </div>
+    <div class="flex flex-wrap justify-center -mx-4">
+      <div class="w-full md:w-1/2 xl:w-1/2 p-4">
+        <a class="block" href="#!">
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <img class="w-full h-64 object-cover rounded-lg" src="cash4.jpg" alt="...">
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-700 mb-2">Cash</h3>
+              <p class="text-gray-500 mb-4">Withdrawal, deposit, payments, remittances, purchases!</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="w-full md:w-1/2 xl:w-1/2 p-4">
+        <a class="block" href="#!">
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <img class="w-full h-64 object-cover rounded-lg" src="cash.jpg" alt="...">
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-700 mb-2">Payments</h3>
+              <p class="text-gray-500 mb-4">Bills, account transfers, remittances, utilities, recharges, taxes, challans, premiums and most others</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="w-full md:w-1/2 xl:w-1/2 p-4">
+        <a class="block" href="#!">
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <img class="w-full h-64 object-cover rounded-lg" src="cash3.jpg" alt="...">
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-700 mb-2">Accounts</h3>
+              <p class="text-gray-500 mb-4">Opening, transfer, closing, remittances...</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="w-full md:w-1/2 xl:w-1/2 p-4">
+        <a class="block" href="#!">
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <img class="w-full h-64 object-cover rounded-lg" src="cash2.png" alt="...">
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-700 mb-2">Insurance</h3>
+              <p class="text-gray-500 mb-4">Life, health, farm, auto, equipment...</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  
+
+  
+  <section id="stories" class="py-20 bg-gray-50 text-gray-700">
+  <div class="container mx-auto px-8">
+    <h2 class="text-4xl font-bold text-center text-pink-600 mb-8">What Customers Says</h2>
+
+    <!-- Carousel Container -->
+    <div class="relative">
+      <!-- Carousel Inner (Testimonial Items) -->
+      <div id="testimonial-slider" class="carousel-inner relative w-full overflow-hidden">
+
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active w-full">
+          <div class="text-center px-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <img src="info.jpg" alt="Customer 1" class="w-20 h-20 mx-auto rounded-full mb-4">
+              <h3 class="font-bold text-lg text-pink-600">Rahul</h3>
+              <p class="mt-2 text-gray-700 italic">"I recently used the Micro Store Micro ATM and was impressed by the convenience and ease of use. The staff was also very helpful and friendly."</p>
+              <div class="mt-3 text-yellow-500">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item w-full">
+          <div class="text-center px-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <img src="info.jpg" alt="Customer 2" class="w-20 h-20 mx-auto rounded-full mb-4">
+              <h3 class="font-bold text-lg text-pink-600">Priya</h3>
+              <p class="mt-2 text-gray-700 italic">"I was skeptical about using a Micro ATM at first, but the Micro Store Micro ATM was so easy to use and the fees were very reasonable. I'll definitely be using it again."</p>
+              <div class="mt-3 text-yellow-500">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="carousel-item w-full">
+          <div class="text-center px-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <img src="info.jpg" alt="Customer 3" class="w-20 h-20 mx-auto rounded-full mb-4">
+              <h3 class="font-bold text-lg text-pink-600">Kumar</h3>
+              <p class="mt-2 text-gray-700 italic">"The Micro Store Micro ATM is a game-changer for people like me who live in rural areas. It's so convenient to have access to cash and banking services at my doorstep."</p>
+              <div class="mt-3 text-yellow-500">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="carousel-item w-full">
+          <div class="text-center px-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <img src="info.jpg" alt="Customer 4" class="w-20 h-20 mx-auto rounded-full mb-4">
+              <h3 class="font-bold text-lg text-pink-600">Sonia</h3>
+              <p class="mt-2 text-gray-700 italic">"I've been using the Micro Store Micro ATM for a while now, and I'm so impressed with the ease of use and the security features. It's a must-have for anyone who wants to manage their finances on the go!"</p>
+              <div class="mt-3 text-yellow-500">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <!-- Carousel Controls -->
+        <div class="absolute top-0 left-0 w-full flex justify-between items-center px-4 py-2">
+          <button id="prev" class="bg-pink-600 text-white p-2 rounded-full">
+            &lt;
+          </button>
+          <button id="next" class="bg-pink-600 text-white p-2 rounded-full">
+            &gt;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+
+  <!-- Contact Section -->
+<section id="contact" class="py-20 bg-white text-gray-700">
+  <div class="container mx-auto px-8">
+      <h2 class="text-4xl font-bold text-center text-pink-600 mb-8">Contact Us</h2>
+      <form action="#" method="post" class="max-w-xl mx-auto">
+          <div class="mb-4">
+              <label for="name" class="block text-sm font-bold mb-2">Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+          </div>
+          <div class="mb-4">
+              <label for="email" class="block text-sm font-bold mb-2">Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+          </div>
+          <div class="mb-4">
+            <label for="phone" class="block text-sm font-bold mb-2">Contact</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+        </div>
+          <div class="mb-4">
+              <label for="message" class="block text-sm font-bold mb-2">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 bg-pink-600 text-white font-bold rounded-lg hover:bg-pink-700">Send Message</button>
+      </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+  <div class="container mx-auto px-8 text-center">
+      <p class="text-lg font-bold mb-4">Connect With Us</p>
+      <!-- Social Media Icons -->
+      <div class="flex justify-center space-x-4 mb-4">
+          <a href="https://facebook.com" target="_blank" class="text-gray-400 hover:text-white">
+              <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-white">
+              <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a href="https://wa.me/9612963394" target="_blank" class="text-gray-400 hover:text-white">
+              <i class="fab fa-whatsapp fa-2x"></i>
+          </a>
+          <a href="mailto:ashimpaul308@gmail.com" target="_blank" class="text-gray-400 hover:text-white">
+              <i class="fas fa-envelope fa-2x"></i>
+          </a>
+      </div>
+      <!-- Contact Details -->
+      <p class="text-gray-400 text-sm mb-2">Phone: +1 234-567-890</p>
+      <p class="text-gray-400 text-sm mb-2">Email: info@gmail.com</p>
+      <p class="text-gray-400 text-sm">Address: 123 Wedding St, Celebration City, XY 56789</p>
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-4">Our Location</h3>
+        <p class="text-gray-700 mb-4">Visit us at:</p>
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2410.6350004358706!2d93.7745599!3d25.8715417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19aeb01090df%3A0x50d3cb03692929fc!2sHumsafar%20Weddings%20Location!5e0!3m2!1sen!2sus!4v1632310748359"
+        width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+        aria-hidden="false" tabindex="0"></iframe>
+    </div>
+      <hr class="my-4 border-gray-600">
+      <p class="text-muted small mb-0">Copyright &copy; The Micro Store Ltd 2023</p><a href="../microstore/Terms and Conditions.html" class="tm-text-highlight">Terms of Website</a>
+  </div>
+</footer>
+<script src="assets/js/script.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB8Vm90Ko7rF0LU95e35CWA8aL_XQ-YeVo",
+    authDomain: "micro-store-90f4f.firebaseapp.com",
+    projectId: "micro-store-90f4f",
+    storageBucket: "micro-store-90f4f.firebasestorage.app",
+    messagingSenderId: "577541771675",
+    appId: "1:577541771675:web:2acc50bf8a9f7b3f79513e",
+    measurementId: "G-NMQNFXQ0CS"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+</body>
+</html>
