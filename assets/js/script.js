@@ -1,19 +1,5 @@
 
-  // Hero Slider functionality
-  const heroSlides = document.querySelectorAll('#hero-slider > div');
-  let currentHeroSlide = 0;
-
-  // Rename this function to showHeroSlide to avoid conflict
-  function showHeroSlide(index) {
-     heroSlides.forEach((slide, i) => {
-         slide.style.opacity = i === index ? '1' : '0';
-     });
-  }
-
-  setInterval(() => {
-     currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
-     showHeroSlide(currentHeroSlide);
-  }, 5000); // 5 seconds interval for the hero slider
+ 
 
   
   // Carousel Slider functionality
@@ -68,3 +54,10 @@
       sidebar.classList.add('translate-x-full');
   });
 });
+
+
+function showMap() {
+  const mapIframe = document.getElementById('map');
+  mapIframe.src = "https://www.google.com/maps/search/Micro+Store+near+me"; // Use general search URL
+  mapIframe.classList.remove('hidden'); // Show the map
+}
