@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Store - Banking</title>
+
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Favicon for branding -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Fonts for enhanced typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-50 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
+
+  <!-- Navbar Section -->
+  <nav class="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-md fixed top-0 w-full z-40">
+      <div class="container mx-auto flex justify-between items-center py-4 px-8">
+          <!-- Logo with branding -->
+          <a href="index.html" class="flex items-center space-x-2">
+              <img src="Micro Store  logo.png" alt="Micro Store Logo" class="h-10 w-auto">
+              <span class="text-2xl font-bold text-[#d97706] font-serif hover:text-pink-500" style="font-family: Playfair Display, serif;">Micro Store</span>
+          </a>
+      </div>
+  </nav>
+
+  <!-- Main Content Section -->
+  <main class="flex-grow bg-gray-50 pt-20">
+      <section class="container mx-auto px-6 md:px-20 lg:px-40 py-16">
+          <!-- Section Header -->
+          <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Banking Services</h1>
+          <p class="text-lg text-center text-gray-600 mb-12">Your gateway to secure banking and smart financial management.</p>
+
+          <!-- Services Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Teller Services Card -->
+              <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300">
+                  <h2 class="text-2xl font-bold text-[#d97706] mb-4">Teller Services</h2>
+                  <!-- List of teller services -->
+                  <ul class="text-gray-600 space-y-2">
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Cash Withdrawal</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Cash Deposit</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Money Transfer</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Fixed Deposits</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Balance Inquiry</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Mini Statements</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Bank Account Opening</li>
+                  </ul>
+              </div>
+
+              <!-- Other Services Card -->
+              <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300">
+                  <h2 class="text-2xl font-bold text-[#d97706] mb-4">Other Services</h2>
+                  <!-- List of other services -->
+                  <ul class="text-gray-600 space-y-2">
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Debit/Credit Cards, Cheque Books</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>KYC Updates</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Loan Applications</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Bill Payments</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Subscription Renewals</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Recharges</li>
+                      <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Travel Bookings</li>
+                  </ul>
+              </div>
+          </div>
+      </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-8 text-center">
+          <!-- Footer separator -->
+          <hr class="my-4 border-gray-600">
+          <!-- Copyright information -->
+          <p class="text-gray-400 text-sm">&copy; The Micro Store Ltd 2023</p>
+          <a href="terms.html" class="text-blue-500 hover:underline">Terms of Website</a>
+      </div>
+  </footer>
+
+</body>
+</html>
