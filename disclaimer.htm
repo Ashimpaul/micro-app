@@ -5,383 +5,401 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micro Store</title>
 
-   
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome icons (free version) -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-<body >
+<body class="bg-gray-50 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
 
   <!-- Navbar -->
   <nav class="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-md fixed top-0 w-full z-40">
       <div class="container mx-auto flex justify-between items-center py-4 px-8">
           <!-- Logo -->
           <a href="index.html" class="flex items-center space-x-2">
-            <button style="height: 3;">
-              
-              <span class="text-2xl font-bold text-[#d97706] font-serif hover:text-pink-500" style="font-family: Playfair Display, serif;">Home</span></button>
+              <img src="Micro Store  logo.png" alt="Micro Store Logo" class="h-10 w-auto">
+              <span class="text-2xl font-bold text-[#d97706] font-serif hover:text-pink-500" style="font-family: Playfair Display, serif;">Micro Store</span>
           </a>
       </div>
   </nav>
 
+    
 
-    <p>
-		<strong>Website disclaimer</strong><br>
-		<ol>
-			<li>
-				Introduction
-				<ul>
-					<li>This disclaimer shall govern your use of our website.</li>
-					<li>By using our website, you accept this disclaimer in full; accordingly, if you disagree with this disclaimer or any part of this disclaimer, you must not use our website.</li>
-					<li>Our website uses cookies; by using our website or agreeing to this disclaimer, you consent to our use of cookies in accordance with the terms of our privacy and cookies policy.</li>
-				</ul>
-			</li>
-			<li>
-				Credit
-				<ul>
-					<li>This document was created using a template from <a href="https://seqlegal.com" target="_blank">SEQ Legal (https://seqlegal.com)</a>.</li>
-				</ul>
-			</li>
-			<li>
-				Copyright notice
-				<ul>
-					<li>
-						Copyright (c) 
-						<script>document.write(new Date().getFullYear());</script> The Micro Store .
-					</li>
-					<li>
-						Subject to the express provisions of this disclaimer:
-						<ul>
-							<li>we, together with our licensors, own and control all the copyright and other intellectual property rights in our website and the material on our website; and</li>
-							<li>all the copyright and other intellectual property rights in our website and the material on our website are reserved, whether registered or not.</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				Licence to use website
-				<ul>
-					<li>
-						You may:
-						<ul>
-							<li>view pages from our website in a web browser;</li>
-							<li>download pages from our website for caching in a web browser; and</li>
-							<li>print pages from our website, subject to the other provisions of this disclaimer.</li>
-						</ul>
-					</li>
-					<li>Except as expressly permitted by Section 4.1 or the other provisions of this disclaimer, you must not download any material from our website or save any such material to your computer.</li>
-					<li>You may only use our website for [your own personal and business purposes], and you must not use our website for any other purposes.</li>
-					<li>
-						Unless you own or control the relevant rights in the material, you must not:
-						<ul>
-							<li>republish material from our website (including republication on another website);</li>
-							<li>sell, rent or sub-license material from our website;</li>
-							<li>show any material from our website in public;</li>
-							<li>exploit material from our website for a commercial purpose; or</li>
-							<li>redistribute material from our website.</li>
-						</ul>
-					</li>
-					<li>We reserve the right to restrict access to areas of our website, or indeed our whole website, at our discretion; you must not circumvent or bypass, or attempt to circumvent or bypass, any access restriction measures on our website.</li>
-				</ul>
-			</li>
-			<li>
-				Acceptable use
-				<ul>
-					<li>
-						You must not:
-						<ul>
-							<li>use our website in any way or take any action that causes, or may cause, damage to the website or impairment of the performance, availability or accessibility of the website;</li>
-							<li>use our website in any way that is unlawful, illegal, fraudulent or harmful, or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity;</li>
-							<li>use our website to copy, store, host, transmit, send, use, publish or distribute any material which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit or other malicious computer software;</li>
-							<li>conduct any systematic or automated data collection activities (including without limitation scraping, data mining, data extraction and data harvesting) on or in relation to our website without our express written consent;</li>
-							<li>access or otherwise interact with our website using any robot, bot, spider or other automated means of any form, except for the purpose of search engine indexing;</li>
-							<li>violate the directives set out in the robots.txt file for our website; or</li>
-							<li>use data collected from our website for any direct marketing activity (including without limitation email marketing, SMS marketing, telemarketing and direct mailing).</li>
-						</ul>
-					</li>
-					<li>You must not use data collected from our website to contact individuals, companies or other persons or entities.</li>
-					<li>You must ensure that all the information you supply to us through our website, or in relation to our website, is true, accurate, current, complete and non-misleading.</li>
-				</ul>
-			</li>
-			<li>
-				Limited warranties
-				<ul>
-					<li>
-						We do not warrant or represent:
-						<ul>
-							<li>the completeness or accuracy of the information published on our website;</li>
-							<li>that the material on the website is up to date; or</li>
-							<li>that the website or any service on the website will remain available.</li>
-						</ul>
-					</li>
-					<li>We reserve the right to discontinue or alter any or all of our website services, and to stop publishing our website, at any time in our sole discretion without notice or explanation; and save to the extent expressly provided otherwise in this disclaimer, you will not be entitled to any compensation or other payment upon the discontinuance or alteration of any website services, or if we stop publishing the website.</li>
-					<li>To the maximum extent permitted by applicable law and subject to Section 7.1, we exclude all representations and warranties relating to the subject matter of this disclaimer, our website and the use of our website.</li>
-				</ul>
-			</li>
-			<li>
-				Limitations and exclusions of liability
-				<ul>
-					<li>
-						Nothing in this disclaimer will:
-						<ul>
-							<li>limit or exclude any liability for death or personal injury resulting from negligence;</li>
-							<li>limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
-							<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
-							<li>exclude any liabilities that may not be excluded under applicable law.</li>
-						</ul>
-					</li>
-					<li>
-						The limitations and exclusions of liability set out in this Section 7 and elsewhere in this disclaimer:
-						<ul>
-							<li>are subject to Section 7.1; and</li>
-							<li>govern all liabilities arising under this disclaimer or relating to the subject matter of this disclaimer, including liabilities arising in contract, in tort (including negligence) and for breach of statutory duty, except to the extent expressly provided otherwise in this disclaimer.</li>
-						</ul>
-					</li>
-					<li>To the extent that our website and the information and services on our website are provided free of charge, we will not be liable for any loss or damage of any nature.</li>
-					<li>We will not be liable to you in respect of any losses arising out of any event or events beyond our reasonable control.</li>
-					<li>We will not be liable to you in respect of any business losses, including (without limitation) loss of or damage to profits, income, revenue, use, production, anticipated savings, business, contracts, commercial opportunities or goodwill.</li>
-					<li>We will not be liable to you in respect of any loss or corruption of any data, database or software.</li>
-					<li>We will not be liable to you in respect of any special, indirect or consequential loss or damage.</li>
-					<li>You accept that we have an interest in limiting the personal liability of our officers and employees and, having regard to that interest, you acknowledge that we are a limited liability entity; you agree that you will not bring any claim personally against our officers or employees in respect of any losses you suffer in connection with the website or this disclaimer (this will not, of course, limit or exclude the liability of the limited liability entity itself for the acts and omissions of our officers and employees).</li>
-				</ul>
-			</li>
-			<li>
-				Variation
-				<ul>
-					<li>We may revise this disclaimer from time to time.</li>
-					<li>The revised disclaimer shall apply to the use of our website from the time of publication of the revised disclaimer on the website. </li>
-				</ul>
-			</li>
-			<li>
-				Severability
-				<ul>
-					<li>If a provision of this disclaimer is determined by any court or other competent authority to be unlawful and/or unenforceable, the other provisions will continue in effect.</li>
-					<li>If any unlawful and/or unenforceable provision of this disclaimer would be lawful or enforceable if part of it were deleted, that part will be deemed to be deleted, and the rest of the provision will continue in effect. </li>
-				</ul>
-			</li>
-			<li>
-				Law and jurisdiction
-				<ul>
-					<li>These terms and conditions shall be governed by and construed in accordance with Indian law.
-					<li>Any disputes relating to these terms and conditions shall be subject to the exclusive OR non-exclusive jurisdiction of the courts at Hyderabad, Telangana State in India.</li>
-				</ul>
-			</li>
-			<li>
-				Statutory and regulatory disclosures
-				<ul>
-					<li>In the event of you proceeding against us, our principals, associates, 	affiliates, subsidiaries, stakeholders, representatives , officers, employees 	and such others, before any judicial authority in any jurisdiction, you shall 	first serve us a written notice of such of your intents in a format as 	prescribed for or in practice by such judicial authority.</li>
-					<li>You also undertake to not procure any injunctions, attachments or any other 	interim or preliminary order before judgement without granting or permitting 	us the 	opportunity to represent our perspective, reply, version or 	representation to your judicial proceedings before such judicial authority.</li>
-					<li>Your service of notice to a wrong address or an old address not anymore in 	use by us either intentionally, accidentally or out of ignorance shall not 	tantamount to a deemed service of notice.</li>
-					<li>Any notice served by you shall grant us at least forty-five judicial working 	days, accounting for any geographical time differences and logistics, to 	respond; calculating from the date of our receipt of such notice.</li>
-					<li>You further undertake to not initiate any criminal proceedings which are 	compoundable in nature and will communicate with us of any errors or 	intransigencies committed by us and grant us an year’s time to correct or 	rectify them from the date of our accepting or acknowledging the said error 	or intransigency on our part, expressly in writing.</li>
-					<li>All of these caveats are subject of Clause 10 herein.</li>
-				</ul>
-			</li>
-			<br>
-			<strong>Legal information disclaimer</strong>
-			<br>
-			<br>
-			<li>
-				No advice
-				<ul>
-					<li>Our website may contain general information of legal nature and reference.</li>
-					<li>Such legal information is not advice and should not be treated as such.</li>
-				</ul>
-			</li>
-			<li>
-				No warranties
-				<ul>
-					<li>The legal information on our website is provided without any representations or warranties, express or implied.</li>
-					<li>
-						Without limiting the scope of Section 13.1, we do not warrant or represent that the legal information on this website:
-						<ul>
-							<li>will be constantly available, or available at all; or</li>
-							<li>is true, accurate, complete, current or non-misleading.</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				No lawyer-client relationship
-				<ul>
-					<li>No lawyer-client, solicitor-client or attorney-client relationship shall be created through the use of our website.</li>
-				</ul>
-			</li>
-			<li>
-				Interactive features
-				<ul>
-					<li>Our website includes interactive features that allow users to communicate with us.</li>
-					<li>You acknowledge that, because of the limited nature of communication through our website's interactive features, any assistance you may receive using any such features is likely to be incomplete and may even be misleading.</li>
-					<li>Any assistance you may receive using any of our website's interactive features does not constitute specific and credible advice and accordingly should not be relied upon without further independent confirmation.</li>
-				</ul>
-			</li>
-			<li>
-				Professional legal assistance and advice
-				<ul>
-					<li>You must not rely on the legal information on our website as an alternative to legal advice from your lawyer or other professional legal services provider.</li>
-					<li>If you have any specific questions about any legal matter, you should consult your lawyer or other professional legal services provider.</li>
-					<li>You should never delay seeking legal advice, disregard legal advice, or commence or discontinue any legal action because of information on our website.</li>
-				</ul>
-			</li>
-			<li>
-				Limits upon exclusions of liability
-				<ul>
-					<li>
-						Nothing in this disclaimer will:
-						<ul>
-							<li>limit or exclude any liability for death or personal injury resulting from negligence;</li>
-							<li>limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
-							<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
-							<li>exclude any liabilities that may not be excluded under applicable law.</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<br>
-			<strong>Financial information disclaimer</strong>
-			<br>
-			<br>
-			<li>
-				No advice
-				<ul>
-					<li>Our website may contain general information of financial nature and reference.</li>
-					<li>Such financial information is not advice and should not be treated as such.</li>
-				</ul>
-			</li>
-			<li>
-				No warranties
-				<ul>
-					<li>The financial information on our website is provided without any representations or warranties, express or implied.</li>
-					<li>
-						Without limiting the scope of Section 19.1, we do not warrant or represent that the financial information on this website:
-						<ul>
-							<li>will be constantly available, or available at all; or</li>
-							<li>is true, accurate, complete, current or non-misleading.</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				No advisor-client relationship
-				<ul>
-					<li>No advisor-client, consultant-client or accountant-client relationship shall be created through the use of our website.</li>
-				</ul>
-			</li>
-			<li>
-				Interactive features
-				<ul>
-					<li>Our website includes interactive features that allow users to communicate with us.</li>
-					<li>You acknowledge that, because of the limited nature of communication through our website's interactive features, any assistance you may receive using any such features is likely to be incomplete and may even be misleading.</li>
-					<li>Any assistance you may receive using any of our website's interactive features does not constitute specific and credible advice and accordingly should not be relied upon without further independent confirmation.</li>
-				</ul>
-			</li>
-			<li>
-				Professional financial assistance and advice
-				<ul>
-					<li>You must not rely on the financial information on our website as an alternative to financial advice from your advisor, consultant or other professional financial services provider.</li>
-					<li>If you have any specific questions about any financial matter, you should consult your financial, accounting or other professional financial services provider.</li>
-					<li>You should never delay seeking financial advice, disregard financial advice, or commence or discontinue any financial action because of information on our website.</li>
-				</ul>
-			</li>
-			<li>
-				Limits upon exclusions of liability
-				<ul>
-					<li>
-						Nothing in this disclaimer will:
-						<ul>
-							<li>limit or exclude any liability for death or personal injury resulting from negligence;</li>
-							<li>limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
-							<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
-							<li>exclude any liabilities that may not be excluded under applicable law.</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<br>
-			<strong>Medical information disclaimer</strong>
-			<br>
-			<br>
-			<li>
-				No advice
-				<ul>
-					<li>Our website may contain general information with medical context or overtones.</li>
-					<li>The medical information is not advice and should not be treated as such.</li>
-				</ul>
-			</li>
-			<li>
-				No warranties
-				<ul>
-					<li>The medical information on our website is provided without any representations or warranties, express or implied.</li>
-					<li>
-						Without limiting the scope of Section 19.1, we do not warrant or represent that the medical information on this website:
-						<ul>
-							<li>will be constantly available, or available at all; or</li>
-							<li>is true, accurate, complete, current or non-misleading.</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				Medical assistance
-				<ul>
-					<li>You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider.</li>
-					<li>If you have any specific questions about any medical matter, you should consult your doctor or other professional healthcare provider.</li>
-					<li>If you think you may be suffering from any medical condition, you should seek immediate medical attention.</li>
-					<li>You should never delay seeking medical advice, disregard medical advice or discontinue medical treatment because of information on our website.</li>
-				</ul>
-			</li>
-			<li>
-				Interactive features
-				<ul>
-					<li>Our website includes interactive features that allow users to communicate with us.</li>
-					<li>You acknowledge that, because of the limited nature of communication through our website's interactive features, any assistance you may receive using any such features is likely to be incomplete and may even be misleading.</li>
-					<li>Any assistance you may receive using any our website's interactive features does not constitute specific advice and accordingly should not be relied upon without further independent confirmation.</li>
-				</ul>
-			</li>
-			<li>
-				Limits upon exclusions of liability
-				<ul>
-					<li>
-						Nothing in this disclaimer will:
-						<ul>
-							<li>limit or exclude any liability for death or personal injury resulting from negligence;</li>
-							<li>limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
-							<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
-							<li>exclude any liabilities that may not be excluded under applicable law.</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				Our details
-				<ul>
-					<li>This website is owned and operated by The Micro Store .</li>
-					<li>Our principal place of business is at 3G, A Block, Jain Srikar Auroville, Khanamet, Madhapur, Hyderabad, Telangana 500081 INDIA.</li>
-					<li>
-						You can contact us:
-						<ul>
-							<li>by post, to the postal address given above;</li>
-							<li>using our website contact form;</li>
-							<li>by telephone, on the contact number published on our website from time to time; or</li>
-							<li>by email, using the email address published on our website from time to time. </li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				Force Majeure
-				<ul>
-					<li>Any delay in or failure of performance by us, our associates, affiliates, representatives, officers, employees, members etc., of their respective obligations under these or related terms, policies, agreements and other contracts or undertakings shall not constitute a breach hereunder or give rise to any claims for damages if, and to the extent that such delays or failures in performance are caused by events or circumstance beyond the control of such party.</li>
-					<li>The term “Beyond the Control of Such Party” include: Lawful order of Government or Authority; Act of War, Rebellion or Sabotage; Fire, Flood, Earthquake, Storm, Nuclear Accident; Epidemic, Pandemic, Medical Emergencies; Judicial curtailment, injunction, restrictions; Bankruptcy and Insolvency proceedings, appointment of receivership, or Other Disasters and Exigencies; Any other cause(s) not within the control of such party or which is by exercise of reasonable diligence, the party will be unable to foresee or prevent or remedy.</li>
-					<li>In case the Force Majeure event persists even after 120 days, both parties may review the situation and collectively arrive at a conclusion beneficial to both, with minimal loss to either party in the event of any contractual obligations or responsibility.</li>
-				</ul>
-			</li>
-		</ol>
-		<br>
-		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x
-		<br>
-	</p>
+<p class="py-16">
+<section id="terms" class="bg-gray-100 py-12">
+  <div class="container mx-auto px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Website disclaimer</h2>
+    <div class="text-gray-700 leading-loose">
+      <ol class="list-decimal pl-6 space-y-4">
+        <li>
+          <h3 class="text-lg font-semibold mb-2">Introduction</h3>
+          <ul class="list-disc pl-4 space-y-2">
+						<li>This disclaimer shall govern your use of our website.</li>
+						<li>By using our website, you accept this disclaimer in full; accordingly, if you disagree with this disclaimer or any part of this disclaimer, you must not use our website.</li>
+						<li>Our website uses cookies; by using our website or agreeing to this disclaimer, you consent to our use of cookies in accordance with the terms of our privacy and cookies policy.</li>
+					</ul>
+				</li>
+				<li>
+					Credit
+					<ul>
+						<li>This document was created using a template from <a href="https://seqlegal.com" target="_blank">SEQ Legal (https://seqlegal.com)</a>.</li>
+					</ul>
+				</li>
+				<li>
+					Copyright notice
+					<ul>
+						<li>
+							Copyright (c) 
+							<script>document.write(new Date().getFullYear());</script> The Micro Store .
+						</li>
+						<li>
+							Subject to the express provisions of this disclaimer:
+							<ul>
+								<li>we, together with our licensors, own and control all the copyright and other intellectual property rights in our website and the material on our website; and</li>
+								<li>all the copyright and other intellectual property rights in our website and the material on our website are reserved, whether registered or not.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					Licence to use website
+					<ul>
+						<li>
+							You may:
+							<ul>
+								<li>view pages from our website in a web browser;</li>
+								<li>download pages from our website for caching in a web browser; and</li>
+								<li>print pages from our website, subject to the other provisions of this disclaimer.</li>
+							</ul>
+						</li>
+						<li>Except as expressly permitted by Section 4.1 or the other provisions of this disclaimer, you must not download any material from our website or save any such material to your computer.</li>
+						<li>You may only use our website for [your own personal and business purposes], and you must not use our website for any other purposes.</li>
+						<li>
+							Unless you own or control the relevant rights in the material, you must not:
+							<ul>
+								<li>republish material from our website (including republication on another website);</li>
+								<li>sell, rent or sub-license material from our website;</li>
+								<li>show any material from our website in public;</li>
+								<li>exploit material from our website for a commercial purpose; or</li>
+								<li>redistribute material from our website.</li>
+							</ul>
+						</li>
+						<li>We reserve the right to restrict access to areas of our website, or indeed our whole website, at our discretion; you must not circumvent or bypass, or attempt to circumvent or bypass, any access restriction measures on our website.</li>
+					</ul>
+				</li>
+				<li>
+					Acceptable use
+					<ul>
+						<li>
+							You must not:
+							<ul>
+								<li>use our website in any way or take any action that causes, or may cause, damage to the website or impairment of the performance, availability or accessibility of the website;</li>
+								<li>use our website in any way that is unlawful, illegal, fraudulent or harmful, or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity;</li>
+								<li>use our website to copy, store, host, transmit, send, use, publish or distribute any material which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit or other malicious computer software;</li>
+								<li>conduct any systematic or automated data collection activities (including without limitation scraping, data mining, data extraction and data harvesting) on or in relation to our website without our express written consent;</li>
+								<li>access or otherwise interact with our website using any robot, bot, spider or other automated means of any form, except for the purpose of search engine indexing;</li>
+								<li>violate the directives set out in the robots.txt file for our website; or</li>
+								<li>use data collected from our website for any direct marketing activity (including without limitation email marketing, SMS marketing, telemarketing and direct mailing).</li>
+							</ul>
+						</li>
+						<li>You must not use data collected from our website to contact individuals, companies or other persons or entities.</li>
+						<li>You must ensure that all the information you supply to us through our website, or in relation to our website, is true, accurate, current, complete and non-misleading.</li>
+					</ul>
+				</li>
+				<li>
+					Limited warranties
+					<ul>
+						<li>
+							We do not warrant or represent:
+							<ul>
+								<li>the completeness or accuracy of the information published on our website;</li>
+								<li>that the material on the website is up to date; or</li>
+								<li>that the website or any service on the website will remain available.</li>
+							</ul>
+						</li>
+						<li>We reserve the right to discontinue or alter any or all of our website services, and to stop publishing our website, at any time in our sole discretion without notice or explanation; and save to the extent expressly provided otherwise in this disclaimer, you will not be entitled to any compensation or other payment upon the discontinuance or alteration of any website services, or if we stop publishing the website.</li>
+						<li>To the maximum extent permitted by applicable law and subject to Section 7.1, we exclude all representations and warranties relating to the subject matter of this disclaimer, our website and the use of our website.</li>
+					</ul>
+				</li>
+				<li>
+					Limitations and exclusions of liability
+					<ul>
+						<li>
+							Nothing in this disclaimer will:
+							<ul>
+								<li>limit or exclude any liability for death or personal injury resulting from negligence;</li>
+								<li>limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
+								<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
+								<li>exclude any liabilities that may not be excluded under applicable law.</li>
+							</ul>
+						</li>
+						<li>
+							The limitations and exclusions of liability set out in this Section 7 and elsewhere in this disclaimer:
+							<ul>
+								<li>are subject to Section 7.1; and</li>
+								<li>govern all liabilities arising under this disclaimer or relating to the subject matter of this disclaimer, including liabilities arising in contract, in tort (including negligence) and for breach of statutory duty, except to the extent expressly provided otherwise in this disclaimer.</li>
+							</ul>
+						</li>
+						<li>To the extent that our website and the information and services on our website are provided free of charge, we will not be liable for any loss or damage of any nature.</li>
+						<li>We will not be liable to you in respect of any losses arising out of any event or events beyond our reasonable control.</li>
+						<li>We will not be liable to you in respect of any business losses, including (without limitation) loss of or damage to profits, income, revenue, use, production, anticipated savings, business, contracts, commercial opportunities or goodwill.</li>
+						<li>We will not be liable to you in respect of any loss or corruption of any data, database or software.</li>
+						<li>We will not be liable to you in respect of any special, indirect or consequential loss or damage.</li>
+						<li>You accept that we have an interest in limiting the personal liability of our officers and employees and, having regard to that interest, you acknowledge that we are a limited liability entity; you agree that you will not bring any claim personally against our officers or employees in respect of any losses you suffer in connection with the website or this disclaimer (this will not, of course, limit or exclude the liability of the limited liability entity itself for the acts and omissions of our officers and employees).</li>
+					</ul>
+				</li>
+				<li>
+					Variation
+					<ul>
+						<li>We may revise this disclaimer from time to time.</li>
+						<li>The revised disclaimer shall apply to the use of our website from the time of publication of the revised disclaimer on the website. </li>
+					</ul>
+				</li>
+				<li>
+					Severability
+					<ul>
+						<li>If a provision of this disclaimer is determined by any court or other competent authority to be unlawful and/or unenforceable, the other provisions will continue in effect.</li>
+						<li>If any unlawful and/or unenforceable provision of this disclaimer would be lawful or enforceable if part of it were deleted, that part will be deemed to be deleted, and the rest of the provision will continue in effect. </li>
+					</ul>
+				</li>
+				<li>
+					Law and jurisdiction
+					<ul>
+						<li>These terms and conditions shall be governed by and construed in accordance with Indian law.
+						<li>Any disputes relating to these terms and conditions shall be subject to the exclusive OR non-exclusive jurisdiction of the courts at Hyderabad, Telangana State in India.</li>
+					</ul>
+				</li>
+				<li>
+					Statutory and regulatory disclosures
+					<ul>
+						<li>In the event of you proceeding against us, our principals, associates, 	affiliates, subsidiaries, stakeholders, representatives , officers, employees 	and such others, before any judicial authority in any jurisdiction, you shall 	first serve us a written notice of such of your intents in a format as 	prescribed for or in practice by such judicial authority.</li>
+						<li>You also undertake to not procure any injunctions, attachments or any other 	interim or preliminary order before judgement without granting or permitting 	us the 	opportunity to represent our perspective, reply, version or 	representation to your judicial proceedings before such judicial authority.</li>
+						<li>Your service of notice to a wrong address or an old address not anymore in 	use by us either intentionally, accidentally or out of ignorance shall not 	tantamount to a deemed service of notice.</li>
+						<li>Any notice served by you shall grant us at least forty-five judicial working 	days, accounting for any geographical time differences and logistics, to 	respond; calculating from the date of our receipt of such notice.</li>
+						<li>You further undertake to not initiate any criminal proceedings which are 	compoundable in nature and will communicate with us of any errors or 	intransigencies committed by us and grant us an year’s time to correct or 	rectify them from the date of our accepting or acknowledging the said error 	or intransigency on our part, expressly in writing.</li>
+						<li>All of these caveats are subject of Clause 10 herein.</li>
+					</ul>
+				</li>
+				<br>
+				<strong>Legal information disclaimer</strong>
+				<br>
+				<br>
+				<li>
+					No advice
+					<ul>
+						<li>Our website may contain general information of legal nature and reference.</li>
+						<li>Such legal information is not advice and should not be treated as such.</li>
+					</ul>
+				</li>
+				<li>
+					No warranties
+					<ul>
+						<li>The legal information on our website is provided without any representations or warranties, express or implied.</li>
+						<li>
+							Without limiting the scope of Section 13.1, we do not warrant or represent that the legal information on this website:
+							<ul>
+								<li>will be constantly available, or available at all; or</li>
+								<li>is true, accurate, complete, current or non-misleading.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					No lawyer-client relationship
+					<ul>
+						<li>No lawyer-client, solicitor-client or attorney-client relationship shall be created through the use of our website.</li>
+					</ul>
+				</li>
+				<li>
+					Interactive features
+					<ul>
+						<li>Our website includes interactive features that allow users to communicate with us.</li>
+						<li>You acknowledge that, because of the limited nature of communication through our website's interactive features, any assistance you may receive using any such features is likely to be incomplete and may even be misleading.</li>
+						<li>Any assistance you may receive using any of our website's interactive features does not constitute specific and credible advice and accordingly should not be relied upon without further independent confirmation.</li>
+					</ul>
+				</li>
+				<li>
+					Professional legal assistance and advice
+					<ul>
+						<li>You must not rely on the legal information on our website as an alternative to legal advice from your lawyer or other professional legal services provider.</li>
+						<li>If you have any specific questions about any legal matter, you should consult your lawyer or other professional legal services provider.</li>
+						<li>You should never delay seeking legal advice, disregard legal advice, or commence or discontinue any legal action because of information on our website.</li>
+					</ul>
+				</li>
+				<li>
+					Limits upon exclusions of liability
+					<ul>
+						<li>
+							Nothing in this disclaimer will:
+							<ul>
+								<li>limit or exclude any liability for death or personal injury resulting from negligence;</li>
+								<li>limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
+								<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
+								<li>exclude any liabilities that may not be excluded under applicable law.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<br>
+				<strong>Financial information disclaimer</strong>
+				<br>
+				<br>
+				<li>
+					No advice
+					<ul>
+						<li>Our website may contain general information of financial nature and reference.</li>
+						<li>Such financial information is not advice and should not be treated as such.</li>
+					</ul>
+				</li>
+				<li>
+					No warranties
+					<ul>
+						<li>The financial information on our website is provided without any representations or warranties, express or implied.</li>
+						<li>
+							Without limiting the scope of Section 19.1, we do not warrant or represent that the financial information on this website:
+							<ul>
+								<li>will be constantly available, or available at all; or</li>
+								<li>is true, accurate, complete, current or non-misleading.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					No advisor-client relationship
+					<ul>
+						<li>No advisor-client, consultant-client or accountant-client relationship shall be created through the use of our website.</li>
+					</ul>
+				</li>
+				<li>
+					Interactive features
+					<ul>
+						<li>Our website includes interactive features that allow users to communicate with us.</li>
+						<li>You acknowledge that, because of the limited nature of communication through our website's interactive features, any assistance you may receive using any such features is likely to be incomplete and may even be misleading.</li>
+						<li>Any assistance you may receive using any of our website's interactive features does not constitute specific and credible advice and accordingly should not be relied upon without further independent confirmation.</li>
+					</ul>
+				</li>
+				<li>
+					Professional financial assistance and advice
+					<ul>
+						<li>You must not rely on the financial information on our website as an alternative to financial advice from your advisor, consultant or other professional financial services provider.</li>
+						<li>If you have any specific questions about any financial matter, you should consult your financial, accounting or other professional financial services provider.</li>
+						<li>You should never delay seeking financial advice, disregard financial advice, or commence or discontinue any financial action because of information on our website.</li>
+					</ul>
+				</li>
+				<li>
+					Limits upon exclusions of liability
+					<ul>
+						<li>
+							Nothing in this disclaimer will:
+							<ul>
+								<li>limit or exclude any liability for death or personal injury resulting from negligence;</li>
+								<li>limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
+								<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
+								<li>exclude any liabilities that may not be excluded under applicable law.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<br>
+				<strong>Medical information disclaimer</strong>
+				<br>
+				<br>
+				<li>
+					No advice
+					<ul>
+						<li>Our website may contain general information with medical context or overtones.</li>
+						<li>The medical information is not advice and should not be treated as such.</li>
+					</ul>
+				</li>
+				<li>
+					No warranties
+					<ul>
+						<li>The medical information on our website is provided without any representations or warranties, express or implied.</li>
+						<li>
+							Without limiting the scope of Section 19.1, we do not warrant or represent that the medical information on this website:
+							<ul>
+								<li>will be constantly available, or available at all; or</li>
+								<li>is true, accurate, complete, current or non-misleading.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					Medical assistance
+					<ul>
+						<li>You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider.</li>
+						<li>If you have any specific questions about any medical matter, you should consult your doctor or other professional healthcare provider.</li>
+						<li>If you think you may be suffering from any medical condition, you should seek immediate medical attention.</li>
+						<li>You should never delay seeking medical advice, disregard medical advice or discontinue medical treatment because of information on our website.</li>
+					</ul>
+				</li>
+				<li>
+					Interactive features
+					<ul>
+						<li>Our website includes interactive features that allow users to communicate with us.</li>
+						<li>You acknowledge that, because of the limited nature of communication through our website's interactive features, any assistance you may receive using any such features is likely to be incomplete and may even be misleading.</li>
+						<li>Any assistance you may receive using any our website's interactive features does not constitute specific advice and accordingly should not be relied upon without further independent confirmation.</li>
+					</ul>
+				</li>
+				<li>
+					Limits upon exclusions of liability
+					<ul>
+						<li>
+							Nothing in this disclaimer will:
+							<ul>
+								<li>limit or exclude any liability for death or personal injury resulting from negligence;</li>
+								<li>limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
+								<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
+								<li>exclude any liabilities that may not be excluded under applicable law.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					Our details
+					<ul>
+						<li>This website is owned and operated by The Micro Store .</li>
+						<li>Our principal place of business is at 3G, A Block, Jain Srikar Auroville, Khanamet, Madhapur, Hyderabad, Telangana 500081 INDIA.</li>
+						<li>
+							You can contact us:
+							<ul>
+								<li>by post, to the postal address given above;</li>
+								<li>using our website contact form;</li>
+								<li>by telephone, on the contact number published on our website from time to time; or</li>
+								<li>by email, using the email address published on our website from time to time. </li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					Force Majeure
+					<ul>
+						<li>Any delay in or failure of performance by us, our associates, affiliates, representatives, officers, employees, members etc., of their respective obligations under these or related terms, policies, agreements and other contracts or undertakings shall not constitute a breach hereunder or give rise to any claims for damages if, and to the extent that such delays or failures in performance are caused by events or circumstance beyond the control of such party.</li>
+						<li>The term “Beyond the Control of Such Party” include: Lawful order of Government or Authority; Act of War, Rebellion or Sabotage; Fire, Flood, Earthquake, Storm, Nuclear Accident; Epidemic, Pandemic, Medical Emergencies; Judicial curtailment, injunction, restrictions; Bankruptcy and Insolvency proceedings, appointment of receivership, or Other Disasters and Exigencies; Any other cause(s) not within the control of such party or which is by exercise of reasonable diligence, the party will be unable to foresee or prevent or remedy.</li>
+						<li>In case the Force Majeure event persists even after 120 days, both parties may review the situation and collectively arrive at a conclusion beneficial to both, with minimal loss to either party in the event of any contractual obligations or responsibility.</li>
+					</ul>
+							</li>
+        </ul>
+    </li>
+  </ul>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<footer class="bg-gray-800 text-white py-8">
+<div class="container mx-auto px-8 text-center">
+    
+    <hr class="my-4 border-gray-600">
+    <p class="text-gray-400 text-sm">&copy; The Micro Store Ltd 2023</p>
+    <a href="../microstore/Terms and Conditions.html" class="text-blue-500 hover:underline">Terms of Website</a>
+</div>
+</footer>
 
+<script src="assets/js/script.js"></script>
 </body>
-
 </html>
+
+
+
