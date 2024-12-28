@@ -14,7 +14,7 @@
     <!-- Simple line icons-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   
     </head>
@@ -37,10 +37,9 @@
       <!-- Desktop Navigation Links -->
       <div class="hidden md:flex space-x-6">
         <a href="#home" class="text-gray-700 hover:text-pink-500">Home</a>
-        <a href="#about" class="text-gray-700 hover:text-pink-500">About</a>
-          <a href="#services" class="text-gray-700 hover:text-pink-500">Services</a>
-          <a href="#portfolio" class="text-gray-700 hover:text-pink-500">mATM</a>
-          <a href="#business" class="text-gray-700 hover:text-pink-500">Business Page</a>
+        <a href="#services" class="text-gray-700 hover:text-pink-500">Services</a>
+          <a href="#business" class="text-gray-700 hover:text-pink-500">Business</a>
+          <a href="#about" class="text-gray-700 hover:text-pink-500">About</a>
           <a href="#contact" class="text-gray-700 hover:text-pink-500">Contact</a>
       </div>
   </div>
@@ -57,10 +56,10 @@
           <i class="fas fa-arrow-right text-xl"></i>
       </button>
       <li><a href="#home" class="text-gray-700 hover:text-pink-500">Home</a></li>
-      <li><a href="#about" class="text-gray-700 hover:text-pink-500">About</a></li>
+      
           <li><a href="#services" class="text-gray-700 hover:text-pink-500">Services</a></li>
-          <li><a href="#portfolio" class="text-gray-700 hover:text-pink-500">mATM</a></li>
-          <li><a href="#business" class="text-gray-700 hover:text-pink-500">Business Page</a></li>
+          <li><a href="#business" class="text-gray-700 hover:text-pink-500">Business</a></li>
+          <li><a href="#about" class="text-gray-700 hover:text-pink-500">About</a></li>
           <li><a href="#contact" class="text-gray-700 hover:text-pink-500">Contact</a></li>
       </ul>
 
@@ -82,100 +81,54 @@
       <div class="absolute inset-0 hero-overlay"></div>
       <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
           <h1 class="text-6xl font-bold mb-4">The Micro Store</h1>
-          <p class="text-xl mb-8">A Retail Services Last Mile Link</p>
+          <p class="text-xl mb-8">Welcome to the friendly neighborhood branch of your bank! </p>
           <a href="#services" class="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-full font-bold transition transform hover-grow">Discover Our Services</a>
       </div>
   </section>
-  <!-- About-->
-  <section 
-    id="about" 
-    class="content-section bg-light flex items-center justify-center text-center text-white"
-    style="
-        background-image: url('tec3.png'); 
-        background-size: cover; 
-        background-position: center; 
-        background-repeat: no-repeat; 
-        height: 80vh;
-    ">
-    <div class="container mx-auto px-4 lg:px-5">
-        <div class="row justify-center">
-            <div class="col-lg-10">
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4">The Micro Store - a complete retail services point</h2>
-                <p class="lead mb-6">
-                    Financial services, logistics support, citizen services, and a lot more;<br>
-                    your friendly neighborhood Store!
-                </p>
-                <a href="#services" class="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-full font-bold transition transform hover:scale-105">
-                    What We Offer
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+  
 
 
   
   <!-- Services Section -->
 <!-- Services-->
-<section class="content-section bg-primary text-white text-center" id="services">
+<section class="content-section bg-primary text-white text-center py-16" id="services">
   <div class="container mx-auto px-4">
-    <div class="content-section-heading">
-      <h3 class="text-secondary mb-0">Services</h3>
-      <h2 class="mb-5">What We Offer</h2>
+    <div class="content-section-heading mb-10">
+      <h3 class="text-secondary mb-2 text-lg md:text-xl font-medium">Services</h3>
+      <h2 class="text-3xl md:text-4xl font-bold">What We Offer</h2>
     </div>
-    <div class="service-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 justify-items-center">
-      
-      <!-- Existing Services -->
+    <div class="service-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8 justify-center items-center">
+
+      <!-- Service: mATM -->
       <div class="service-item text-center">
         <a href="m-ATM.html">
-          <span class="service-icon flex items-center justify-center rounded-full bg-white text-primary p-5 mx-auto mb-3" style="width: 80px; height: 80px;">
-            <i class="fa-regular fa-money-bill-1 text-2xl"></i>
+          <span class="service-icon flex items-center justify-center rounded-full bg-white text-primary p-8 mx-auto mb-3" style="width: 120px; height: 120px;">
+            <i class="fa-regular fa-money-bill-1 text-4xl"></i>
           </span>
           <h4 class="text-base font-bold"><strong>mATM</strong></h4>
           <p class="text-faded mb-0 text-sm">Banking, Cash, Insurance, Loans, Securities, Payments, Bills, Recharges, Remittances…</p>
         </a>
       </div>
 
+      <!-- Service: Warehouse -->
       <div class="service-item text-center">
-        <a href="logistics.html">
-          <span class="service-icon flex items-center justify-center rounded-full bg-white text-primary p-5 mx-auto mb-3" style="width: 80px; height: 80px;">
-            <i class="fa-solid fa-truck-fast text-2xl"></i>
+        <a href="warehouse.html">
+          <span class="service-icon flex items-center justify-center rounded-full bg-white text-primary p-8 mx-auto mb-3" style="width: 120px; height: 120px;">
+            <i class="fa-solid fa-truck-fast text-4xl"></i>
           </span>
-          <h4 class="text-base font-bold"><strong>Logistics</strong></h4>
+          <h4 class="text-base font-bold"><strong>Warehouse</strong></h4>
           <p class="text-faded mb-0 text-sm">Pick up and drop points, last mile delivery, micro warehousing</p>
         </a>
       </div>
 
-      <div class="service-item text-center">
-        <a href="e-commerce.html">
-          <span class="service-icon flex items-center justify-center rounded-full bg-white text-primary p-5 mx-auto mb-3" style="width: 80px; height: 80px;">
-            <i class="fa-solid fa-at text-2xl"></i>
-          </span>
-          <h4 class="text-base font-bold"><strong>e-Commerce</strong></h4>
-          <p class="text-faded mb-0 text-sm">Nearest delivery and service points</p>
-        </a>
-      </div>
-
+      <!-- Service: Citizen Services -->
       <div class="service-item text-center">
         <a href="citizen services.html">
-          <span class="service-icon flex items-center justify-center rounded-full bg-white text-primary p-5 mx-auto mb-3" style="width: 80px; height: 80px;">
-            <i class="fa-solid fa-bell-concierge text-2xl"></i>
+          <span class="service-icon flex items-center justify-center rounded-full bg-white text-primary p-8 mx-auto mb-3" style="width: 120px; height: 120px;">
+            <i class="fa-solid fa-bell-concierge text-4xl"></i>
           </span>
           <h4 class="text-base font-bold"><strong>Citizen Services</strong></h4>
           <p class="text-faded mb-0 text-sm">Registrations, applications, updates, some inquiries….</p>
-        </a>
-      </div>
-
-      <!-- New Service: Credit/Debit -->
-      <div class="service-item text-center">
-        <a href="credit-debit.html">
-          <span class="service-icon flex items-center justify-center rounded-full bg-white text-primary p-5 mx-auto mb-3" style="width: 80px; height: 80px;">
-            <!-- Visa logo -->
-            <i class="fa-brands fa-cc-visa" style="color: #5d95c0; width: 35px; height: auto;"></i>
-           
-          </span>
-          <h4 class="text-base font-bold"><strong>Credit/Debit</strong></h4>
-          <p class="text-faded mb-0 text-sm">Easy and secure payments with Visa-supported cards.</p>
         </a>
       </div>
 
@@ -184,7 +137,8 @@
 </section>
 
 
-<section class="py-20 bg-gray-50 text-gray-700" id="portfolio">
+
+<section class="py-20 bg-gray-50 text-gray-700" id="services">
   <div class="container mx-auto px-4">
     <div class="text-center">
       <h3 class="text-lg text-gray-500 mb-2">mATM</h3>
@@ -198,7 +152,7 @@
             <img class="w-full h-64 object-cover rounded-lg" src="cash3.jpg" alt="Banking">
             <div class="p-4">
               <h3 class="text-lg font-bold text-gray-700 mb-2">Banking</h3>
-              <p class="text-gray-500 mb-4">Savings, current accounts, fixed deposits, and more.</p>
+              <p class="text-gray-500 mb-4">Savings, current accounts,  Fixed & Recurring deposits and more.</p>
             </div>
           </div>
         </a>
@@ -210,7 +164,7 @@
             <img class="w-full h-64 object-cover rounded-lg" src="cash.jpg" alt="Cash Services">
             <div class="p-4">
               <h3 class="text-lg font-bold text-gray-700 mb-2">Cash</h3>
-              <p class="text-gray-500 mb-4">Withdrawal, deposit, payments, and remittances.</p>
+              <p class="text-gray-500 mb-4">Withdrawal, deposit, payments,remittances and transfers, .</p>
             </div>
           </div>
         </a>
@@ -247,13 +201,75 @@
   
 
   
-  <section id="business" class="py-20 bg-gray-50 text-gray-700">
+<section id="business" class="py-20 bg-primary text-gray-700">
   <div class="container mx-auto px-8">
     <h2 class="text-4xl font-bold text-center text-pink-600 mb-8">Business Page</h2>
 
-   
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center">
+      
+      <!-- Channel Partnership Card -->
+      <div class="business-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-pink-50">
+        <div class="p-6">
+          <h4 class="text-xl font-semibold text-gray-800 mb-4">Channel Partnership</h4>
+          <p class="text-gray-600 text-base">Retail merchants and district channel partners</p>
+        </div>
+      </div>
+
+      <!-- BFSI Collaboration Card -->
+      <div class="business-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-pink-50">
+        <div class="p-6">
+          <h4 class="text-xl font-semibold text-gray-800 mb-4">BFSI Collaboration</h4>
+          <p class="text-gray-600 text-base">Banks, NBFC, insurers, mutual funds</p>
+        </div>
+      </div>
+
+      <!-- Warehousing & Storage Card -->
+      <div class="business-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-pink-50">
+        <div class="p-6">
+          <h4 class="text-xl font-semibold text-gray-800 mb-4">Warehousing & Storage</h4>
+          <p class="text-gray-600 text-base">Ecommerce, qcommerce, parcel companies, local businesses</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- About -->
+  <section id="about" class="content-section bg-light text-dark py-16">
+    <div class="container mx-auto px-4 lg:px-5">
+      <div class="row justify-center">
+        <div class="col-lg-8 text-center">
+          <!-- Top Heading -->
+          <h2 class="text-4xl font-bold text-center text-pink-600 mb-8">About Us</h2>
+          
+          <!-- Content -->
+          <p class="text-base leading-loose text-gray-700 font-medium mb-8">
+            <span class="font-semibold text-pink-500">The Micro Store</span>, a modern retailing platform that connects, empowers, and delivers. 
+            Bringing e-commerce to the vicinity, banking to the neighborhood, warehousing around 
+            the kerb, and digitizing small and large retailers! A blend of the physical and digital 
+            with dollops of convenience and ease; building the power to empower. 
+            <br><br>
+            An inclusive environment reaching your neighborhood, around your corner, and your doorstep 
+            with your money, your goods, your tools. We help connect your business to the world - 
+            digitally and physically. Micro Store addresses the needs of all people in rural, semi-urban, 
+            and urban areas as well as businesses of all scales and sizes, from home businesses in villages 
+            to MSMEs and everyone else everywhere using tools and processes relied upon and supported by 
+            bankers and some of the most reliable enterprises.
+          </p>
+          
+          <!-- Button -->
+          <a href="about.html" class="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-full font-bold transition transform hover:scale-105 shadow-lg">
+            Learn More About Us
+          </a>
+        </div>
+      </div>
     </div>
   </section>
+  
+  
+  
   
 
   
@@ -286,54 +302,77 @@
 
 <!-- Footer -->
 <footer class="bg-gray-800 text-white py-8">
-  <div class="container mx-auto px-8 text-center">
-      <p class="text-lg font-bold mb-4">Connect With Us</p>
-      <!-- Social Media Icons 
-      <div class="flex justify-center space-x-4 mb-4">
-          <a href="https://facebook.com" target="_blank" class="text-gray-400 hover:text-white">
-              <i class="fab fa-facebook fa-2x"></i>
-          </a>
-          <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-white">
-              <i class="fab fa-instagram fa-2x"></i>
-          </a>
-          <a href="https://wa.me/9612963394" target="_blank" class="text-gray-400 hover:text-white">
-              <i class="fab fa-whatsapp fa-2x"></i>
-          </a>
-          <a href="mailto:ashimpaul308@gmail.com" target="_blank" class="text-gray-400 hover:text-white">
-              <i class="fas fa-envelope fa-2x"></i>
-          </a>
-      </div>-->
-      <!-- Contact Details -->
-      <p class="text-gray-400 text-sm mb-2">Phone: +1 234-567-890</p>
-      <p class="text-gray-400 text-sm mb-2">Email: info@themicro.store</p>
-
-      <div class="text-center">
-        <!-- Clickable Text -->
-        <div class="text-blue-600 cursor-pointer flex items-center justify-center space-x-2" onclick="showMap()">
-          <i class="fas fa-search"></i>
-          <span class="text-lg font-medium">Micro Store near me</span>
-        </div>
-    
-       <div class="flex justify-center items-center h-full">
-    <iframe
-        id="map"
-        class="w-full max-w-4xl h-96 mt-4 hidden rounded-lg shadow-md"
-        src="YOUR_GOOGLE_MAPS_EMBED_URL"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-</div>
-
+  <div class="container mx-auto px-8 sm:px-16 lg:px-32">
+    <!-- Footer Top Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      
+      <!-- Useful Links Section -->
+      <div>
+        <h5 class="font-bold mb-2">Useful Links</h5>
+        <ul>
+          <li><a href="/" class="text-white hover:text-gray-300">Home</a></li>
+          <li><a href="/#services" class="text-white hover:text-gray-300">Services</a></li>
+          <li><a href="/#business" class="text-white hover:text-gray-300">Business</a></li>
+          <li><a href="/#about" class="text-white hover:text-gray-300">About Us</a></li>
+          <li><a href="/#contact" class="text-white hover:text-gray-300">Contact</a></li>
+        </ul>
       </div>
 
-    <div class="text-center">
-  <hr class="my-4 border-gray-600">
-  <p class="text-muted small mb-0">Copyright &copy; The Micro Store Ltd 2023</p>
-  <a href="terms.htm" class="tm-text-highlight">Terms of Website</a>
-</div>
+      <!-- Our Services Section -->
+      <div>
+        <h5 class="font-bold mb-2">Our Services</h5>
+        <ul>
+          <li><a href="/web-design" class="text-white hover:text-gray-300">M-ATM</a></li>
+          <li><a href="/web-development" class="text-white hover:text-gray-300">Warehouse</a></li>
+          <li><a href="/product-management" class="text-white hover:text-gray-300">Citizen Services</a></li>
+        </ul>
+      </div>
 
+      <!-- Contact Us Section -->
+      <div>
+        <h5 class="font-bold mb-2">Contact Us</h5>
+        <p class="text-sm">Phone: +1 5589 55488 55</p>
+        <p class="text-sm">Email: info@example.com</p>
+      </div>
+
+      <!-- Policies Section -->
+      <div>
+        <h5 class="font-bold mb-2">Policies</h5>
+        <ul>
+          <li><a href="/policy.htm" class="text-white hover:text-gray-300">Privacy Policy</a></li>
+          <li><a href="/terms.htm" class="text-white hover:text-gray-300">Terms of Website</a></li>
+          <li><a href="/disclaimer.htm" class="text-white hover:text-gray-300">Legal Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Google Maps Embed Section -->
+    <div class="text-center mb-8">
+      <div class="text-blue-600 cursor-pointer flex items-center justify-center space-x-2" onclick="showMap()">
+        <i class="fas fa-search"></i>
+        <span class="text-lg font-medium">Micro Store near me</span>
+      </div>
+      <div class="flex justify-center items-center h-full">
+        <iframe
+          id="map"
+          class="w-full max-w-4xl h-96 mt-4 hidden rounded-lg shadow-md"
+          src="YOUR_GOOGLE_MAPS_EMBED_URL"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <hr class="my-4 border-gray-400">
+    <div class="text-center">
+      <p class="text-sm text-gray-300 mb-0">&copy; The Micro Store Ltd 2023. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
+
+
 <script src="assets/js/script.js"></script>
 
 
