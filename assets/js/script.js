@@ -26,3 +26,24 @@ function showMap() {
   mapIframe.src = "https://www.google.com/maps/search/Micro+Store+near+me"; // Use general search URL
   mapIframe.classList.remove('hidden'); // Show the map
 }
+
+//pop up button
+const applyBtn = document.getElementById("applyBtn");
+const applyModal = document.getElementById("applyModal");
+const closeModal = document.getElementById("closeModal");
+
+applyBtn.addEventListener("click", function () {
+  applyModal.classList.remove("hidden");
+});
+
+// Close Modal
+closeModal.addEventListener("click", function () {
+  applyModal.classList.add("hidden");
+});
+
+// Close Modal on Outside Click
+window.addEventListener("click", function (e) {
+  if (e.target === applyModal) {
+    applyModal.classList.add("hidden");
+  }
+});
