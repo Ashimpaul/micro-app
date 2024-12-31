@@ -27,23 +27,33 @@ function showMap() {
   mapIframe.classList.remove('hidden'); // Show the map
 }
 
-//pop up button
-const applyBtn = document.getElementById("applyBtn");
-const applyModal = document.getElementById("applyModal");
-const closeModal = document.getElementById("closeModal");
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("cookiePopup");
+  const acceptBtn = document.getElementById("acceptCookies");
+  const rejectBtn = document.getElementById("rejectCookies");
 
-applyBtn.addEventListener("click", function () {
-  applyModal.classList.remove("hidden");
-});
+  // Show the popup after a slight delay
+  setTimeout(() => {
+    popup.style.display = "block";
+  }, 1000);
 
-// Close Modal
-closeModal.addEventListener("click", function () {
-  applyModal.classList.add("hidden");
-});
+  acceptBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+    alert("You accepted cookies!");
+    // Save consent in local storage or cookies
+    localStorage.setItem("cookieConsent", "accepted");
+  });
 
-// Close Modal on Outside Click
-window.addEventListener("click", function (e) {
-  if (e.target === applyModal) {
-    applyModal.classList.add("hidden");
+  rejectBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+    alert("You rejected cookies!");
+    // Save rejection in local storage or cookies
+    localStorage.setItem("cookieConsent", "rejected");
+  });
+
+  // Check for existing consent
+  const cookieConsent = localStorage.getItem("cookieConsent");
+  if (cookieConsent) {
+    popup.style.display = "none";
   }
 });

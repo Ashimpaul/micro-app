@@ -91,3 +91,85 @@
   }
 }
 
+.cookie-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px; /* Reduced padding */
+  z-index: 1000;
+}
+
+.cookie-content {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Vertically center the content */
+  text-align: center;
+  gap: 10px; /* Reduced gap */
+}
+
+.cookie-popup p {
+  margin: 0;
+  font-size: 12px; /* Smaller text size */
+  color: #555;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.cookie-popup a {
+  color: #007bff;
+  font-weight: 400; /* Lighter weight */
+  text-decoration: none;
+  font-size: 12px; /* Smaller link text */
+}
+
+.cookie-popup a:hover {
+  text-decoration: underline;
+}
+
+.cookie-actions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: flex-start; /* Align buttons to the left */
+  gap: 5px; /* Reduced gap between buttons */
+}
+
+.btn {
+  padding: 8px 16px; /* Smaller padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px; /* Smaller button text */
+  transition: all 0.3s ease;
+  width: 100%; /* Default to full width */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Button Widths */
+@media (min-width: 768px) {
+  .cookie-actions .btn {
+    width: 200px; /* Smaller fixed width for larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .cookie-actions .btn {
+    width: 120px; /* Smaller width for smaller screens */
+  }
+}
