@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micro Store</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -27,7 +28,7 @@
       </div>
   </nav>
 
-  <main class="flex-grow bg-gray-50 pt-24">
+  <main class="flex-grow bg-gray-50 pt-24 min-h-screen sm:overflow-auto">
     <section class="container mx-auto px-6 md:px-20 lg:px-40 py-16">
       <div class="bg-white shadow-lg rounded-xl p-8 hover:shadow-2xl transition duration-300 mx-auto max-w-screen-md">
         <!-- Title -->
@@ -48,41 +49,83 @@
   </main>
 
   <!-- Modal -->
-  <div id="applyModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
+  <!-- Modal -->
+  <div id="applyModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 w-full max-w-lg mx-4 sm:mx-8 overflow-auto max-h-[calc(100vh-100px)]">
       <!-- Modal Header -->
-      <div class="flex justify-between items-center mb-6">
-        <h4 class="text-2xl font-bold text-gray-900">Application Form</h4>
+      <div class="flex justify-between items-center mb-2">
+        <h4 class="text-xl font-bold text-gray-900">Application Form</h4>
         <button id="closeModal" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
       </div>
-      <!-- Modal Body -->
-      <form>
-        <div class="mb-4">
-          <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-          <input type="text" id="name" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Name" required>
+  
+      <!-- Modal Body (Scrollable) -->
+      <form class="overflow-auto max-h-[calc(100vh-200px)]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Full Name -->
+          <div class="md:col-span-2">
+            <label for="state" class="block text-gray-700 font-medium mb-1">State</label>
+          <select id="state" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
+            <option value="">Select State</option>
+            <option value="state1">State 1</option>
+            <option value="state2">State 2</option>
+            <option value="state3">State 3</option>
+          </select>
+          </div>
+  
+          <!-- Designation -->
+          <div class="md:col-span-2">
+            <label for="district" class="block text-gray-700 font-medium mb-1">District</label>
+          <select id="district" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
+            <option value="">Select District</option>
+            <option value="district1">District 1</option>
+            <option value="district2">District 2</option>
+            <option value="district3">District 3</option>
+          </select>
+          </div>
+  
+          <!-- Name of Organisation -->
+          <div class="md:col-span-2">
+            <label for="organisation" class="block text-gray-700 font-medium mb-1">Address</label>
+            <input type="text" id="address" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Address" required>
+          </div>
+  
+          <!-- Email Address -->
+          <div class="md:col-span-2">
+            <label for="fullname" class="block text-gray-700 font-medium mb-2">Full Name</label>
+            <input type="text" id="fullname" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Full Name" required>
+          </div>
+  
+          <!-- Phone Number -->
+          <div class="md:col-span-2">
+            <label for="designation" class="block text-gray-700 font-medium mb-2">Designation</label>
+            <input type="text" id="designation" name="designation" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Designation" required>
+          </div>
+  
+          <!-- Service/Product -->
+          <div class="md:col-span-2">
+            <label for="organisation" class="block text-gray-700 font-medium mb-2">Name of Organisation</label>
+            <input type="text" id="organisation" name="organisation" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Name of Organisation" required>
+          </div>
         </div>
-        <div class="mb-4">
-          <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-          <input type="email" id="email" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Email" required>
-        </div>
-        <div class="mb-4">
-          <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-          <input type="tel" id="phone" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Phone Number" required>
-        </div>
-        <div class="flex justify-end">
-          <button type="submit" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300">
+  
+        <!-- Submit Button -->
+        <div class="flex justify-center mt-6">
+          <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none justify-center">
             Submit
           </button>
         </div>
       </form>
     </div>
   </div>
+  </div>
+  
+
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400 py-8">
       <div class="container mx-auto text-center">
           <p>&copy; The Micro Store Ltd 2023</p>
-          <a href="../microstore/Terms and Conditions.html" class="text-pink-500 hover:underline">Terms of Website</a>
+          <a href="terms.htm" class="text-pink-500 hover:underline">Terms of Website</a>
       </div>
   </footer>
 

@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micro Store</title>
-
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome icons (free version) -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-50 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
@@ -16,40 +13,149 @@
   <!-- Navbar -->
   <nav class="bg-gradient-to-r from-white via-gray-100 to-white backdrop-blur-lg shadow-lg fixed top-0 w-full z-40">
       <div class="container mx-auto flex justify-between items-center py-4 px-8">
-          <!-- Logo -->
           <a href="index.html" class="flex items-center space-x-2">
               <img src="Micro Store  logo.png" alt="Micro Store Logo" class="h-12 w-auto">
               <span class="text-2xl font-bold text-[#d97706] font-serif hover:text-pink-500 transition">
                   Micro Store
               </span>
           </a>
-          
       </div>
   </nav>
 
-  <main class="flex-grow bg-gray-50 pt-24">
+  <main class="flex-grow bg-gray-50 pt-24 min-h-screen sm:overflow-auto">
     <section class="container mx-auto px-6 md:px-20 lg:px-40 py-16">
       <div class="bg-white shadow-lg rounded-xl p-8 hover:shadow-2xl transition duration-300 mx-auto max-w-screen-md">
-        <!-- Title -->
-        <h1 class="text-4xl font-bold text-gray-800 mb-4 text-center" >
+        <h1 class="text-4xl font-bold text-gray-800 mb-4 text-center">
           Warehousing & Storage
         </h1>
         <p class="text-gray-700 text-center mb-8">
-          Join us to bring Micro Store closer to every corner of the district. Apply now to become a channel partner.
+          Join us to speed up your logistics and reach farther, deeper, and closer to your customers and clients. Micro Store takes you close to every corner in all districts.
         </p>
-        <!-- Apply Button -->
+        <div class="flex justify-center">
+          <button id="applyBtn" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none">
+            Apply Now
+          </button>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Modal -->
+  <div id="applyModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 w-full max-w-lg mx-4 sm:mx-8 overflow-y-auto max-h-[90vh]">
+      <!-- Modal Header -->
+      <div class="flex justify-between items-center mb-2">
+        <h4 class="text-xl font-bold text-gray-900">Application Form</h4>
+        <button id="closeModal" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+      </div>
+
+      <!-- Modal Body (Form) -->
+      <div class="modal-body overflow-y-auto max-h-[75vh]">
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 gap-3">
+            <!-- State -->
+            <div>
+              <label for="state" class="block text-gray-700 font-medium mb-1">State</label>
+              <select id="state" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
+                <option value="">Select State</option>
+                <option value="state1">State 1</option>
+                <option value="state2">State 2</option>
+                <option value="state3">State 3</option>
+              </select>
+            </div>
+
+            <!-- District -->
+            <div>
+              <label for="district" class="block text-gray-700 font-medium mb-1">District</label>
+              <select id="district" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
+                <option value="">Select District</option>
+                <option value="district1">District 1</option>
+                <option value="district2">District 2</option>
+                <option value="district3">District 3</option>
+              </select>
+            </div>
+
+            <!-- Name and Designation in the same line -->
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="fullname" class="block text-gray-700 font-medium mb-1">Full Name</label>
+                <input type="text" id="fullname" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Full Name" required>
+              </div>
+
+              <div>
+                <label for="designation" class="block text-gray-700 font-medium mb-1">Designation</label>
+                <input type="text" id="designation" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Designation" required>
+              </div>
+            </div>
+
+            <!-- Name of Organisation -->
+            <div>
+              <label for="organisation" class="block text-gray-700 font-medium mb-1">Name of Organisation</label>
+              <input type="text" id="organisation" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Name of Organisation" required>
+            </div>
+
+            <!-- Email and Phone Number in the same line -->
+<div class="grid grid-cols-2 gap-4">
+  <div>
+    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+    <input type="email" id="email" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Email Address" required>
+  </div>
+
+  <div>
+    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+    <input type="tel" id="phone" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Phone Number" required>
+  </div>
+</div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+              <textarea id="message" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Message" required></textarea>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="flex justify-center mt-6">
+            <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+
+      
+      
+
   <footer class="bg-gray-900 text-gray-400 py-8">
       <div class="container mx-auto text-center">
           <p>&copy; The Micro Store Ltd 2023</p>
-          <a href="../microstore/Terms and Conditions.html" class="text-pink-500 hover:underline">Terms of Website</a>
+          <a href="terms.htm" class="text-pink-500 hover:underline">Terms of Website</a>
       </div>
   </footer>
 
-  
+  <script>
+    // Open Modal
+    const applyBtn = document.getElementById("applyBtn");
+    const applyModal = document.getElementById("applyModal");
+    const closeModal = document.getElementById("closeModal");
+
+    applyBtn.addEventListener("click", function () {
+      applyModal.classList.remove("hidden");
+    });
+
+    // Close Modal
+    closeModal.addEventListener("click", function () {
+      applyModal.classList.add("hidden");
+    });
+
+    // Close Modal on Outside Click
+    window.addEventListener("click", function (e) {
+      if (e.target === applyModal) {
+        applyModal.classList.add("hidden");
+      }
+    });
+  </script>
 </body>
 </html>
