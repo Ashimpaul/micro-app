@@ -57,3 +57,29 @@ document.addEventListener("DOMContentLoaded", function () {
     popup.style.display = "none";
   }
 });
+
+
+import { database } from './firebase-config.js';
+import { ref, push, set } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+document.getElementById('microstoreForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const name = event.target.name.value;
+  const email = event.target.email.value;
+  const contact = event.target.contact.value;
+  const message = event.target.message.value;
+
+  console.log(name, email, contact, message); // Debug
+
+  try {
+    const submissionsRef = ref(database, 'submissions');
+    const newSubmissionRef = push(submissionsRef);
+    await set(newSubmissionRef, { name, email, contact, message });
+    alert("Form submitted successfully!");
+    event.target.reset();
+  } catch (error) {
+    console.error("Error submitting form: ", error);
+    alert("Error submitting form. Please try again.");
+  }
+});

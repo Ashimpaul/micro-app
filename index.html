@@ -6,6 +6,18 @@
     <title>Micro Store</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
+
+    <!-- Include Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+    <script type="module" src="firebase-config.js"></script> <!-- Firebase Config -->
+    <script type="module" src="js\script.js"></script> <!-- Your main script -->
+    <script type="module">
+      import { database } from './firebase-config.js';
+    </script>
+    
+
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -82,7 +94,7 @@
       <div class="absolute inset-0 hero-overlay"></div>
       <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
           <h1 class="text-6xl font-bold mb-4">The Micro Store</h1>
-          <p class="text-xl mb-8">Welcome to the friendly neighborhood branch of your bank! </p>
+          <p class="text-xl mb-8 text-gray-200">Welcome to the friendly neighborhood branch of your bank! </p>
           <a href="#services" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none">Discover Our Services</a>
       </div>
   </section>
@@ -296,32 +308,138 @@
   
 
   
-
-  <!-- Contact Section -->
-<section id="contact" class="py-20 bg-white text-gray-700">
+<!-- Contact Section -->
+<section id="contact-section" class="py-20 bg-white text-gray-700">
   <div class="container mx-auto px-8">
-      <h2 class="text-4xl font-bold text-center text-pink-600 mb-8">Contact Us</h2>
-      <form action="#" method="post" class="max-w-xl mx-auto">
-          <div class="mb-4">
-              <label for="name" class="block text-sm font-bold mb-2">Name</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
-          </div>
-          <div class="mb-4">
-              <label for="email" class="block text-sm font-bold mb-2">Email</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
-          </div>
-          <div class="mb-4">
-            <label for="phone" class="block text-sm font-bold mb-2">Contact</label>
-            <input type="contact" id="contact" name="contact" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
-        </div>
-          <div class="mb-4">
-              <label for="message" class="block text-sm font-bold mb-2">Message</label>
-              <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"></textarea>
-          </div>
-          <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none justify-center">Send Message</button>
-      </form>
+    <h2 class="text-4xl font-bold text-center text-pink-600 mb-8">Contact Us</h2>
+    <form id="microstoreForm" class="max-w-xl mx-auto">
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-bold mb-2">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-bold mb-2">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="contact" class="block text-sm font-bold mb-2">Contact</label>
+        <input
+          type="text"
+          id="contact"
+          name="contact"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="message" class="block text-sm font-bold mb-2">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"
+          required
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        id="submit"
+        class="w-full bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none justify-center"
+      >
+        Send Message
+      </button>
+    </form>
+    <div id="successMessage" class="hidden text-center text-green-600 font-bold mt-4">
+      Your message has been sent successfully!
+    </div>
   </div>
 </section>
+
+<!-- Firebase Scripts -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+  import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAjkY_eOFoAlyO2RDEukg_2otPBdi-38pQ",
+    authDomain: "micro-store-b6e9e.firebaseapp.com",
+    databaseURL: "https://micro-store-b6e9e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "micro-store-b6e9e",
+    storageBucket: "micro-store-b6e9e.firebaseapp.com",
+    messagingSenderId: "1011897917619",
+    appId: "1:1011897917619:web:ac85ed20a2374c8e13d0c6",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // Form submission handler
+  const form = document.getElementById("microstoreForm");
+  const successMessage = document.getElementById("successMessage");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get form field values
+    const nameElement = document.getElementById("name");
+    const emailElement = document.getElementById("email");
+    const contactElement = document.getElementById("contact"); // Make sure this targets the correct input
+    const messageElement = document.getElementById("message");
+
+    // Debugging: Log elements to check if they exist
+    console.log("nameElement:", nameElement);
+    console.log("emailElement:", emailElement);
+    console.log("contactElement:", contactElement);
+    console.log("messageElement:", messageElement);
+
+    // Check if the elements are found and not null
+    if (nameElement && emailElement && contactElement && messageElement) {
+      const name = nameElement.value.trim();
+      const email = emailElement.value.trim();
+      const contact = contactElement.value.trim();
+      const message = messageElement.value.trim();
+
+      // Basic validation
+      if (!name || !email || !contact || !message) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      // Log form data for debugging
+      console.log({ name, email, contact, message });
+
+      // Save data to Firebase Database
+      const dbRef = ref(db, "contact  Us Data");
+      push(dbRef, { name, email, contact, message })
+        .then(() => {
+          successMessage.classList.remove("hidden");
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Error submitting form:", error);
+        });
+    } else {
+      console.error("Form elements not found.");
+    }
+  });
+</script>
+
+<!-- Footer and other sections remain unchanged -->
+
 
 <div id="cookiePopup" class="cookie-popup">
   <div class="cookie-content">
@@ -357,7 +475,7 @@
       <div>
         <h5 class="font-bold mb-2">Our Services</h5>
         <ul>
-          <li><a href="/web-design" class="text-white hover:text-gray-300">M-ATM</a></li>
+          <li><a href="/web-design" class="text-white hover:text-gray-300">m-ATM</a></li>
           <li><a href="/web-development" class="text-white hover:text-gray-300">Warehouse</a></li>
           <li><a href="/product-management" class="text-white hover:text-gray-300">Citizen Services</a></li>
         </ul>
@@ -406,8 +524,14 @@
   </div>
 </footer>
 
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
 
 <script src="assets/js/script.js"></script>
+
+
+
 
 
 </body>

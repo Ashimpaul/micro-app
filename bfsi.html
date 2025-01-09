@@ -41,7 +41,7 @@
         <!-- Apply Button -->
         <div class="flex justify-center">
           <button id="applyBtn" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none">
-            Apply Now
+            Reach us
           </button>
         </div>
       </div>
@@ -118,8 +118,9 @@
           <a href="../microstore/Terms and Conditions.html" class="text-pink-500 hover:underline">Terms of Website</a>
       </div>
   </footer>
+  <script src="assets/js/script.js"></script>
 
-  <script>
+  <script type="module">
     // Open Modal
     const applyBtn = document.getElementById("applyBtn");
     const applyModal = document.getElementById("applyModal");
@@ -140,6 +141,60 @@
         applyModal.classList.add("hidden");
       }
     });
+  
+    // Firebase configuration
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyAjkY_eOFoAlyO2RDEukg_2otPBdi-38pQ",
+      authDomain: "micro-store-b6e9e.firebaseapp.com",
+      databaseURL: "https://micro-store-b6e9e-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "micro-store-b6e9e",
+      storageBucket: "micro-store-b6e9e.firebaseapp.com",
+      messagingSenderId: "1011897917619",
+      appId: "1:1011897917619:web:ac85ed20a2374c8e13d0c6",
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+  
+    // Form submission handler
+    const form = document.querySelector("form.overflow-auto");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      // Get form field values
+      const fullname = document.getElementById("fullname").value.trim();
+      const designation = document.getElementById("designation").value.trim();
+      const organisation = document.getElementById("organisation").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service_product = document.getElementById("service_product").value.trim();
+  
+      // Ensure all fields are filled
+      if (!fullname || !designation || !organisation || !email || !phone || !service_product) {
+        alert("Please fill out all fields.");
+        return;
+      }
+  
+      // Save data to Firebase Database
+      const dbRef = ref(db, "bfsi Channel");
+      push(dbRef, { fullname, designation, organisation, email, phone, service_product })
+        .then(() => {
+          alert("Form submitted successfully!");
+          form.reset();
+  
+          // Redirect to index.html
+          window.location.href = "index.html"; // Redirect to index.html
+        })
+        .catch((error) => {
+          console.error("Error submitting form:", error);
+          alert("There was an error submitting the form. Please try again.");
+        });
+    });
+  
   </script>
-</body>
+  </body>
 </html>
