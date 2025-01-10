@@ -41,7 +41,7 @@
         <!-- Apply Button -->
         <div class="flex justify-center">
           <button id="applyBtn" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none">
-            Apply Now
+            Reach us
           </button>
         </div>
       </div>
@@ -59,59 +59,63 @@
       </div>
     <!-- Modal Body (Scrollable) -->
     <form class="overflow-auto max-h-[calc(100vh-200px)]">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 gap-4">
         <!-- Full Name -->
         <div>
           <label for="fullname" class="block text-gray-700 font-medium mb-1">Full Name</label>
           <input type="text" id="fullname" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Full Name" required>
         </div>
-
+    
         <!-- Designation -->
         <div>
           <label for="designation" class="block text-gray-700 font-medium mb-1">Designation</label>
           <input type="text" id="designation" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Designation" required>
         </div>
-
+    
         <!-- Name of Organisation -->
         <div>
           <label for="organisation" class="block text-gray-700 font-medium mb-1">Name of Organisation</label>
           <input type="text" id="organisation" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Name of Organisation" required>
         </div>
-
-        <!-- Email Address -->
-        <div>
-          <label for="email" class="block text-gray-700 font-medium mb-1">Email Address</label>
-          <input type="email" id="email" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Email Address" required>
+    
+        <!-- Email Address and Phone Number in the same row -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-1">Email Address</label>
+            <input type="email" id="email" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Email Address" required>
+          </div>
+    
+          <div>
+            <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+            <input type="tel" id="phone" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Phone Number" required>
+          </div>
         </div>
-
-        <!-- Phone Number -->
-        <div>
-          <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
-          <input type="tel" id="phone" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" placeholder="Your Phone Number" required>
+    
+        <!-- State and District in the same row -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="state" class="block text-gray-700 font-medium mb-1">State</label>
+            <select id="state" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
+              <option value="">Select State</option>
+            </select>
+          </div>
+          <div>
+            <label for="district" class="block text-gray-700 font-medium mb-1">District</label>
+            <select id="district" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
+              <option value="">Select District</option>
+            </select>
+          </div>
         </div>
-
-        <!-- State and District Dropdowns -->
-<div>
-  <label for="state" class="block text-gray-700 font-medium mb-1">State</label>
-  <select id="state" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
-    <option value="">Select State</option>
-  </select>
-</div>
-
-<div>
-  <label for="district" class="block text-gray-700 font-medium mb-1">District</label>
-  <select id="district" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
-    <option value="">Select District</option>
-  </select>
-</div>
-
-
+      </div>
+    
       <!-- Submit Button -->
       <div class="flex justify-center mt-6">
-        <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none justify-center">
+        <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none">
           Submit
         </button>
+      </div>
     </form>
+    
   </div>
 </div>
 </div>
@@ -262,15 +266,21 @@
       const dbRef = ref(db, "District Channel");
       push(dbRef, { fullname, designation, organisation, email, phone, state, district })
         .then(() => {
-          alert("Form submitted successfully!");
-          form2.reset();
-  
-          // Redirect to index.html
-          window.location.href = "index.html"; // Redirect to index.html
+           // Save the success message to localStorage
+      localStorage.setItem("formSubmitted", "Your application has been received and is being processed.");
+
+// Reset the form after submission
+form2.reset();
+
+// Redirect to index.html after a short delay
+setTimeout(() => {
+  window.location.href = "index.html"; // Redirect to index.html
+}, 1000); // 3-second delay for the SweetAlert message to be seen
         })
         .catch((error) => {
-          console.error("Error submitting form:", error);
-        });
+      console.error("Error saving data: ", error);
+      alert("There was an error submitting the form. Please try again.");
+    });
     });
   
     // Call the fetchStatesAndDistricts() to populate the dropdowns when the page loads

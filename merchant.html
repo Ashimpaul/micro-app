@@ -270,16 +270,21 @@
       // Save data to Firebase Database
       const dbRef = ref(db, "Merchant Channel");
       push(dbRef, { fullname, designation, organisation, address, state, district })
-        .then(() => {
-          alert("Form submitted successfully!");
-          form2.reset();
-  
-          // Redirect to index.html
-          window.location.href = "index.html"; // Redirect to index.html
-        })
-        .catch((error) => {
-          console.error("Error submitting form:", error);
-        });
+        .then(() => {// Save the success message to localStorage
+      localStorage.setItem("formSubmitted", "Your application has been received and is being processed.");
+
+      // Reset the form after submission
+      form2.reset();
+
+      // Redirect to index.html after a short delay
+      setTimeout(() => {
+        window.location.href = "index.html"; // Redirect to index.html
+      }, 1000); // 3-second delay for the SweetAlert message to be seen
+    })
+    .catch((error) => {
+      console.error("Error saving data: ", error);
+      alert("There was an error submitting the form. Please try again.");
+    });
     });
   
     // Call the fetchStatesAndDistricts() to populate the dropdowns when the page loads

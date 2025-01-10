@@ -173,6 +173,9 @@
       const phone = document.getElementById("phone").value.trim();
       const service_product = document.getElementById("service_product").value.trim();
   
+      // Debug log
+      console.log({ fullname, designation, organisation, email, phone, service_product });
+  
       // Ensure all fields are filled
       if (!fullname || !designation || !organisation || !email || !phone || !service_product) {
         alert("Please fill out all fields.");
@@ -183,18 +186,23 @@
       const dbRef = ref(db, "bfsi Channel");
       push(dbRef, { fullname, designation, organisation, email, phone, service_product })
         .then(() => {
-          alert("Form submitted successfully!");
+          // Save the success message to localStorage
+          localStorage.setItem("formSubmitted", "Your application has been received and is being processed.");
+  
+          // Reset the form after submission
           form.reset();
   
-          // Redirect to index.html
-          window.location.href = "index.html"; // Redirect to index.html
+         
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1000);
         })
         .catch((error) => {
           console.error("Error submitting form:", error);
           alert("There was an error submitting the form. Please try again.");
         });
     });
-  
   </script>
+  
   </body>
 </html>

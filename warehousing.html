@@ -33,7 +33,7 @@
         </p>
         <div class="flex justify-center">
           <button id="applyBtn" class="bg-gradient-to-r from-pink-500 to-pink-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 focus:outline-none">
-            Apply Now
+            Reach us
           </button>
         </div>
       </div>
@@ -51,29 +51,22 @@
 
       <!-- Modal Body (Form) -->
       <div class="modal-body overflow-y-auto max-h-[75vh]">
-        <form class="space-y-4">
+        <form class="overflow-auto max-h-[calc(100vh-200px)]">
           <div class="grid grid-cols-1 gap-3">
-            <!-- State -->
-            <div>
-              <label for="state" class="block text-gray-700 font-medium mb-1">State</label>
-              <select id="state" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
-                <option value="">Select State</option>
-                <option value="state1">State 1</option>
-                <option value="state2">State 2</option>
-                <option value="state3">State 3</option>
-              </select>
-            </div>
+            <!-- State and District Dropdowns -->
+<div>
+  <label for="state" class="block text-gray-700 font-medium mb-1">State</label>
+  <select id="state" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
+    <option value="">Select State</option>
+  </select>
+</div>
 
-            <!-- District -->
-            <div>
-              <label for="district" class="block text-gray-700 font-medium mb-1">District</label>
-              <select id="district" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
-                <option value="">Select District</option>
-                <option value="district1">District 1</option>
-                <option value="district2">District 2</option>
-                <option value="district3">District 3</option>
-              </select>
-            </div>
+<div>
+  <label for="district" class="block text-gray-700 font-medium mb-1">District</label>
+  <select id="district" class="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-pink-500 focus:border-pink-500" required>
+    <option value="">Select District</option>
+  </select>
+</div>
 
             <!-- Name and Designation in the same line -->
             <div class="grid grid-cols-2 gap-4">
@@ -135,27 +128,166 @@
       </div>
   </footer>
 
-  <script>
+  <script type="module">
     // Open Modal
     const applyBtn = document.getElementById("applyBtn");
     const applyModal = document.getElementById("applyModal");
     const closeModal = document.getElementById("closeModal");
-
+  
     applyBtn.addEventListener("click", function () {
       applyModal.classList.remove("hidden");
     });
-
+  
     // Close Modal
     closeModal.addEventListener("click", function () {
       applyModal.classList.add("hidden");
     });
-
+  
     // Close Modal on Outside Click
     window.addEventListener("click", function (e) {
       if (e.target === applyModal) {
         applyModal.classList.add("hidden");
       }
     });
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getDatabase, ref, get, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";  // Added 'push' import
+  
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAjkY_eOFoAlyO2RDEukg_2otPBdi-38pQ",
+      authDomain: "micro-store-b6e9e.firebaseapp.com",
+      databaseURL: "https://micro-store-b6e9e-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "micro-store-b6e9e",
+      storageBucket: "micro-store-b6e9e.firebaseapp.com",
+      messagingSenderId: "1011897917619",
+      appId: "1:1011897917619:web:ac85ed20a2374c8e13d0c6",
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+  
+    let statesData = [];
+  
+    // Fetch states and districts from Firebase
+    async function fetchStatesAndDistricts() {
+      try {
+        const statesRef = ref(db, 'states');  // Reference to 'states' node in Firebase
+        const statesSnapshot = await get(statesRef);
+  
+        // Debugging: Check if the data exists
+        console.log("States Data:", statesSnapshot.val());
+  
+        if (statesSnapshot.exists()) {
+          statesData = statesSnapshot.val();
+          populateStates(statesData);
+        } else {
+          console.error("No states data available.");
+          alert("Failed to load states. Please try again later.");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        alert("Failed to load states. Please try again later.");
+      }
+    }
+  
+    // Populate the state dropdown with data
+    function populateStates(statesData) {
+      const stateElement = document.getElementById('state');
+      stateElement.innerHTML = '<option value="">Select State</option>';  // Clear current options
+  
+      // Iterate over the states and populate the dropdown
+      statesData.forEach(stateObj => {
+        const option = document.createElement('option');
+        option.value = stateObj.state;  // Use the state name as the value
+        option.textContent = stateObj.state;  // Display the state name
+        stateElement.appendChild(option);
+      });
+    }
+  
+    // Populate the district dropdown based on selected state
+    function populateDistricts(stateData) {
+      const districtElement = document.getElementById('district');
+      districtElement.innerHTML = '<option value="">Select District</option>';  // Clear current options
+  
+      // Iterate over the districts for the selected state
+      if (stateData && stateData.districts) {
+        stateData.districts.forEach(district => {
+          const option = document.createElement('option');
+          option.value = district;  // Use the district name as the value
+          option.textContent = district;  // Display the district name
+          districtElement.appendChild(option);
+        });
+      }
+    }
+  
+    // Handle the change event for the state dropdown
+    document.getElementById('state').addEventListener('change', function () {
+      const selectedState = this.value;  // Get the selected state name
+      if (selectedState) {
+        const selectedStateData = statesData.find(state => state.state === selectedState);  // Find the selected state data
+        if (selectedStateData) {
+          populateDistricts(selectedStateData);  // Populate districts based on selected state
+        }
+      }
+    });
+  
+    // Form submission handler
+const form2 = document.querySelector("form.overflow-auto");
+form2.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Get form field values
+  const fullnameElement = document.getElementById("fullname");
+  const designationElement = document.getElementById("designation");
+  const organisationElement = document.getElementById("organisation");
+  const emailElement = document.getElementById("email");
+  const phoneElement = document.getElementById("phone");
+  const stateElement = document.getElementById("state");
+  const districtElement = document.getElementById("district");
+  const messageElement = document.getElementById("message");
+
+  // Ensure all fields are filled
+  const fullname = fullnameElement.value.trim();
+  const designation = designationElement.value.trim();
+  const organisation = organisationElement.value.trim();
+  const email = emailElement.value.trim();
+  const phone = phoneElement.value.trim();
+  const state = stateElement.value.trim();
+  const district = districtElement.value.trim();
+  const message = messageElement.value.trim();
+
+  if (!fullname || !designation || !organisation || !email || !phone || !state || !district || !message) {
+    alert("Please fill out all fields.");
+    return;
+  }
+
+  // Save data to Firebase Database
+  const dbRef = ref(db, "Warehousing Channel");
+  push(dbRef, { fullname, designation, organisation, email, phone, state, district, message })
+    .then(() => {
+      // Save the success message to localStorage
+      localStorage.setItem("formSubmitted", "Your application has been received and is being processed.");
+
+      // Reset the form after submission
+      form2.reset();
+
+      // Redirect to index.html after a short delay
+      setTimeout(() => {
+        window.location.href = "index.html"; // Redirect to index.html
+      }, 1000); // 3-second delay for the SweetAlert message to be seen
+    })
+    .catch((error) => {
+      console.error("Error saving data: ", error);
+      alert("There was an error submitting the form. Please try again.");
+    });
+});
+  
+    // Call the fetchStatesAndDistricts() to populate the dropdowns when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+      fetchStatesAndDistricts();  // Fetch and populate states dropdown when page loads
+    });
   </script>
-</body>
+  </body>
 </html>

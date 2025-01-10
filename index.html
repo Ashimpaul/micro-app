@@ -80,6 +80,28 @@
   </div>
 </nav>
 
+<!-- JavaScript -->
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const menuToggleButton = document.getElementById("menu-toggle"); // Hamburger Menu
+  const menuCloseButton = document.getElementById("menu-close");  // Close Button
+  const sidebar = document.getElementById("sidebar-wrapper");     // Sidebar
+
+  // Toggle Sidebar (Open Menu)
+  menuToggleButton.addEventListener("click", () => {
+    sidebar.classList.remove("translate-x-full"); // Show Sidebar
+    sidebar.classList.add("translate-x-0");
+  });
+
+  // Close Sidebar
+  menuCloseButton.addEventListener("click", () => {
+    sidebar.classList.remove("translate-x-0");    // Hide Sidebar
+    sidebar.classList.add("translate-x-full");
+  });
+});
+
+  </script>
+
   
 
 
@@ -436,9 +458,11 @@
       console.error("Form elements not found.");
     }
   });
+
+  
 </script>
 
-<!-- Footer and other sections remain unchanged -->
+
 
 
 <div id="cookiePopup" class="cookie-popup">
@@ -475,7 +499,7 @@
       <div>
         <h5 class="font-bold mb-2">Our Services</h5>
         <ul>
-          <li><a href="/web-design" class="text-white hover:text-gray-300">m-ATM</a></li>
+          <li><a href="/web-design" class="text-white hover:text-gray-300">mATM</a></li>
           <li><a href="/web-development" class="text-white hover:text-gray-300">Warehouse</a></li>
           <li><a href="/product-management" class="text-white hover:text-gray-300">Citizen Services</a></li>
         </ul>
@@ -515,6 +539,38 @@
         ></iframe>
       </div>
     </div>
+
+    <!-- Success Message Placeholder (not needed with SweetAlert, kept for reference) -->
+<div id="success-message" style="display:none; background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-top: 20px;">
+  <p id="message-text"></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  // Check if formSubmitted message exists in localStorage
+  const successMessage = localStorage.getItem("formSubmitted");
+
+  if (successMessage) {
+    // Show SweetAlert message instead of a div
+    Swal.fire({
+  title: 'Thank You!',
+  text: successMessage,
+  icon: 'success',
+  confirmButtonText: 'Ok',
+  background: '#f0f8ff',
+  color: '#f06292',
+  confirmButtonColor: '#f06292', // Pink confirm button color
+  customClass: {
+    popup: 'animated bounceIn'
+  }
+});
+
+
+    // Clear the message from localStorage
+    localStorage.removeItem("formSubmitted");
+  }
+</script>
 
     <!-- Footer Bottom Section -->
     <hr class="my-4 border-gray-400">
