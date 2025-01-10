@@ -6,10 +6,9 @@
     <title>Micro Store</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-
     <!-- Include Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
     <script type="module" src="firebase-config.js"></script> <!-- Firebase Config -->
     <script type="module" src="js\script.js"></script> <!-- Your main script -->
@@ -17,7 +16,6 @@
       import { database } from './firebase-config.js';
     </script>
     
-
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -28,81 +26,48 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  
-    </head>
-<body class="bg-gray-50 font-sans leading-normal tracking-normal">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
 
   <!-- Navbar -->
-<nav class="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-md fixed top-0 w-full z-40">
-  <div class="container mx-auto flex justify-between items-center py-4 px-8">
-      <!-- Logo -->
-      <a href="index.html" class="flex items-center space-x-2">
-          <img src="Micro Store  logo.png" alt="Humsafar Weddings Logo" class="h-10 w-auto ">
-          <span class="text-2xl font-bold text-[#d97706] font-serif hover:text-pink-500" style="font-family: Playfair Display, serif;">Micro Store</span>
-      </a>
+  <nav class="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-md fixed top-0 w-full z-40">
+    <div class="container mx-auto flex justify-between items-center py-4 px-8">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2">
+            <img src="Micro Store  logo.png" alt="Humsafar Weddings Logo" class="h-10 w-auto ">
+            <span class="text-2xl font-bold text-[#d97706] font-serif hover:text-pink-500" style="font-family: Playfair Display, serif;">Micro Store</span>
+        </a>
 
-      <!-- Hamburger Menu Button (Visible on Small Screens) -->
-      <button id="menu-toggle" class="block md:hidden bg-white text-[#d97706] w-10 h-10 rounded-full shadow-md flex items-center justify-center" aria-label="Open Menu">
-          <i class="fas fa-bars text-xl"></i>
-      </button>
+        <!-- Hamburger Menu Button (Visible on Small Screens) -->
+        <button id="menu-toggle" class="block md:hidden bg-white text-[#d97706] w-10 h-10 rounded-full shadow-md flex items-center justify-center" aria-label="Open Menu">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
 
-      <!-- Desktop Navigation Links -->
-      <div class="hidden md:flex space-x-6">
-        <a href="index.html" class="text-gray-700 hover:text-pink-500">Home</a>
-        <a href="warehouse.html" class="text-gray-700 hover:text-pink-500">Warehouse</a>
-          <a href="m-ATM.html" class="text-gray-700 hover:text-pink-500">mATM</a>
-          <a href="about.html" class="text-gray-700 hover:text-pink-500">About</a>
-          
-      </div>
-  </div>
-</nav>
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-pink-500">Home</a>
+          <a href="warehouse.html" class="text-gray-700 hover:text-pink-500">Warehouse</a>
+            <a href="m-ATM.html" class="text-gray-700 hover:text-pink-500">mATM</a>
+            <a href="about.html" class="text-gray-700 hover:text-pink-500">About</a>
+        </div>
+    </div>
+  </nav>
 
-<!-- Sidebar Navigation -->
-<nav id="sidebar-wrapper" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-  <div class="flex flex-col h-full justify-between">
-    <!-- Close Button -->
-    
-      <!-- Sidebar Logo and Links -->
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar-wrapper" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="flex flex-col h-full justify-between">
       <ul class="flex flex-col items-center space-y-6 py-8">
         <button id="menu-close" class="bg-white text-[#d97706] w-10 h-10 rounded-full shadow-md flex items-center justify-center mx-8 mb-8 hover:bg-pink-500" aria-label="Close Menu">
           <i class="fas fa-arrow-right text-xl"></i>
-      </button>
-      <li><a href="index.html" class="text-gray-700 hover:text-pink-500">Home</a></li>
-      
-          <li><a href="warehouse.html" class="text-gray-700 hover:text-pink-500">Warehouse</a></li>
-          <li><a href="m-ATM.html" class="text-gray-700 hover:text-pink-500">mATM</a></li>
-          <li><a href="about.html" class="text-gray-700 hover:text-pink-500">About</a>
-        </li>
-          
+        </button>
+        <li><a href="index.html" class="text-gray-700 hover:text-pink-500">Home</a></li>
+        <li><a href="warehouse.html" class="text-gray-700 hover:text-pink-500">Warehouse</a></li>
+        <li><a href="m-ATM.html" class="text-gray-700 hover:text-pink-500">mATM</a></li>
+        <li><a href="about.html" class="text-gray-700 hover:text-pink-500">About</a></li>
       </ul>
-
-      
-  </div>
-</nav>
-
-<!-- JavaScript -->
-<script>
- document.addEventListener("DOMContentLoaded", () => {
-  const menuToggleButton = document.getElementById("menu-toggle"); // Hamburger Menu
-  const menuCloseButton = document.getElementById("menu-close");  // Close Button
-  const sidebar = document.getElementById("sidebar-wrapper");     // Sidebar
-
-  // Toggle Sidebar (Open Menu)
-  menuToggleButton.addEventListener("click", () => {
-    sidebar.classList.remove("translate-x-full"); // Show Sidebar
-    sidebar.classList.add("translate-x-0");
-  });
-
-  // Close Sidebar
-  menuCloseButton.addEventListener("click", () => {
-    sidebar.classList.remove("translate-x-0");    // Hide Sidebar
-    sidebar.classList.add("translate-x-full");
-  });
-});
-
-  </script>
-
+    </div>
+  </nav>
 
   <!-- Main Content Section -->
   <main class="flex-grow bg-gray-50 pt-24">
@@ -115,23 +80,40 @@
             <p class="text-lg text-gray-600 leading-relaxed">
                 PAN, Aadhar, GST, Ayushman – application, enrolment, update and inquiry 
             </p>
-
-           
         </div>
     </section>
   </main>
 
-
- 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8">
+  <footer class="bg-gray-800 text-white py-8 mt-auto">
     <div class="container mx-auto px-8 text-center">
         <hr class="my-4 border-gray-600">
         <p class="text-gray-400 text-sm">&copy; The Micro Store Ltd 2023</p>
         <a href="terms.htm" class="text-blue-500 hover:underline">Terms of Website</a>
     </div>
-</footer>
+  </footer>
 
-<script src="assets/js/script.js"></script>
+  <!-- JavaScript -->
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+    const menuToggleButton = document.getElementById("menu-toggle"); // Hamburger Menu
+    const menuCloseButton = document.getElementById("menu-close");  // Close Button
+    const sidebar = document.getElementById("sidebar-wrapper");     // Sidebar
+
+    // Toggle Sidebar (Open Menu)
+    menuToggleButton.addEventListener("click", () => {
+      sidebar.classList.remove("translate-x-full"); // Show Sidebar
+      sidebar.classList.add("translate-x-0");
+    });
+
+    // Close Sidebar
+    menuCloseButton.addEventListener("click", () => {
+      sidebar.classList.remove("translate-x-0");    // Hide Sidebar
+      sidebar.classList.add("translate-x-full");
+    });
+  });
+  </script>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
