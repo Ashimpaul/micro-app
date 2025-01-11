@@ -173,3 +173,7 @@
     width: 120px; /* Smaller width for smaller screens */
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

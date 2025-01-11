@@ -13,9 +13,7 @@
 
     <script type="module" src="firebase-config.js"></script> <!-- Firebase Config -->
     <script type="module" src="js\script.js"></script> <!-- Your main script -->
-    <script type="module">
-      import { database } from './firebase-config.js';
-    </script>
+    
     
 
     <link href="assets/css/style.css" rel="stylesheet">
@@ -80,27 +78,7 @@
   </div>
 </nav>
 
-<!-- JavaScript -->
-<script>
- document.addEventListener("DOMContentLoaded", () => {
-  const menuToggleButton = document.getElementById("menu-toggle"); // Hamburger Menu
-  const menuCloseButton = document.getElementById("menu-close");  // Close Button
-  const sidebar = document.getElementById("sidebar-wrapper");     // Sidebar
 
-  // Toggle Sidebar (Open Menu)
-  menuToggleButton.addEventListener("click", () => {
-    sidebar.classList.remove("translate-x-full"); // Show Sidebar
-    sidebar.classList.add("translate-x-0");
-  });
-
-  // Close Sidebar
-  menuCloseButton.addEventListener("click", () => {
-    sidebar.classList.remove("translate-x-0");    // Hide Sidebar
-    sidebar.classList.add("translate-x-full");
-  });
-});
-
-  </script>
 
   
 
@@ -196,7 +174,7 @@
       <div class="w-full md:w-1/2 xl:w-1/2 p-4">
         <a class="block" href="cash.html">
           <div class="bg-white rounded-lg shadow-md p-4">
-            <img class="w-full h-64 object-cover rounded-lg" src="cash.jpg" alt="Cash Services">
+            <img class="w-full h-64 object-cover rounded-lg" src="cashhh.jpg" alt="Cash Services">
             <div class="p-4">
               <h3 class="text-lg font-bold text-gray-700 mb-2">Cash</h3>
               <p class="text-gray-500 mb-4">Withdrawal, deposit, payments,remittances and transfers, .</p>
@@ -293,42 +271,6 @@
 </section>
 
 
-  <!-- About 
-  <section id="about" class="content-section bg-light text-dark py-16">
-    <div class="container mx-auto px-4 lg:px-5">
-      <div class="row justify-center">
-        <div class="col-lg-8 text-center">
-          <!-- Top Heading 
-          <h2 class="text-4xl font-bold text-center text-pink-600 mb-8">About Us</h2>
-          
-          <!-- Content 
-          <p class="text-base leading-loose text-gray-700 font-medium mb-8">
-            <span class="font-semibold text-pink-500">The Micro Store</span>, a modern retailing platform that connects, empowers, and delivers. 
-            Bringing e-commerce to the vicinity, banking to the neighborhood, warehousing around 
-            the kerb, and digitizing small and large retailers! A blend of the physical and digital 
-            with dollops of convenience and ease; building the power to empower. 
-            <br><br>
-            An inclusive environment reaching your neighborhood, around your corner, and your doorstep 
-            with your money, your goods, your tools. We help connect your business to the world - 
-            digitally and physically. Micro Store addresses the needs of all people in rural, semi-urban, 
-            and urban areas as well as businesses of all scales and sizes, from home businesses in villages 
-            to MSMEs and everyone else everywhere using tools and processes relied upon and supported by 
-            bankers and some of the most reliable enterprises.
-          </p>
-          
-          <!-- Button 
-          <a href="about.html" class="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-full font-bold transition transform hover:scale-105 shadow-lg">
-            Learn More About Us
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
--->
-  
-  
-  
-
   
 <!-- Contact Section -->
 <section id="contact-section" class="py-20 bg-white text-gray-700">
@@ -390,77 +332,7 @@
 </section>
 
 <!-- Firebase Scripts -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-  import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
-  // Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAjkY_eOFoAlyO2RDEukg_2otPBdi-38pQ",
-    authDomain: "micro-store-b6e9e.firebaseapp.com",
-    databaseURL: "https://micro-store-b6e9e-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "micro-store-b6e9e",
-    storageBucket: "micro-store-b6e9e.firebaseapp.com",
-    messagingSenderId: "1011897917619",
-    appId: "1:1011897917619:web:ac85ed20a2374c8e13d0c6",
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-
-  // Form submission handler
-  const form = document.getElementById("microstoreForm");
-  const successMessage = document.getElementById("successMessage");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Get form field values
-    const nameElement = document.getElementById("name");
-    const emailElement = document.getElementById("email");
-    const contactElement = document.getElementById("contact"); // Make sure this targets the correct input
-    const messageElement = document.getElementById("message");
-
-    // Debugging: Log elements to check if they exist
-    console.log("nameElement:", nameElement);
-    console.log("emailElement:", emailElement);
-    console.log("contactElement:", contactElement);
-    console.log("messageElement:", messageElement);
-
-    // Check if the elements are found and not null
-    if (nameElement && emailElement && contactElement && messageElement) {
-      const name = nameElement.value.trim();
-      const email = emailElement.value.trim();
-      const contact = contactElement.value.trim();
-      const message = messageElement.value.trim();
-
-      // Basic validation
-      if (!name || !email || !contact || !message) {
-        alert("Please fill out all fields.");
-        return;
-      }
-
-      // Log form data for debugging
-      console.log({ name, email, contact, message });
-
-      // Save data to Firebase Database
-      const dbRef = ref(db, "contact  Us Data");
-      push(dbRef, { name, email, contact, message })
-        .then(() => {
-          successMessage.classList.remove("hidden");
-          form.reset();
-        })
-        .catch((error) => {
-          console.error("Error submitting form:", error);
-        });
-    } else {
-      console.error("Form elements not found.");
-    }
-  });
-
-  
-</script>
 
 
 
@@ -490,7 +362,7 @@
           <li><a href="/" class="text-white hover:text-gray-300">Home</a></li>
           <li><a href="/#services" class="text-white hover:text-gray-300">Services</a></li>
           <li><a href="/#business" class="text-white hover:text-gray-300">Business</a></li>
-          <li><a href="/about.html" class="text-white hover:text-gray-300">About Us</a></li>
+          <li><a href="about.html" class="text-white hover:text-gray-300">About</a></li>
           <li><a href="/#contact" class="text-white hover:text-gray-300">Contact</a></li>
         </ul>
       </div>
@@ -499,9 +371,9 @@
       <div>
         <h5 class="font-bold mb-2">Our Services</h5>
         <ul>
-          <li><a href="/web-design" class="text-white hover:text-gray-300">mATM</a></li>
-          <li><a href="/web-development" class="text-white hover:text-gray-300">Warehouse</a></li>
-          <li><a href="/product-management" class="text-white hover:text-gray-300">Citizen Services</a></li>
+          <li><a href="m-ATM.html" class="text-white hover:text-gray-300">mATM</a></li>
+          <li><a href="warehouse.html" class="text-white hover:text-gray-300">Warehouse</a></li>
+          <li><a href="citizen services.html" class="text-white hover:text-gray-300">Citizen Services</a></li>
         </ul>
       </div>
 
@@ -516,7 +388,7 @@
         <h5 class="font-bold mb-2">Terms</h5>
         <ul>
           
-          <li><a href="/terms.htm" class="text-white hover:text-gray-300">Terms of Website</a></li>
+          <li><a href="/terms.htm" class="text-white hover:text-gray-300">Terms of use</a></li>
           
         </ul>
       </div>
@@ -545,32 +417,7 @@
   <p id="message-text"></p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script>
-  // Check if formSubmitted message exists in localStorage
-  const successMessage = localStorage.getItem("formSubmitted");
-
-  if (successMessage) {
-    // Show SweetAlert message instead of a div
-    Swal.fire({
-  title: 'Thank You!',
-  text: successMessage,
-  icon: 'success',
-  confirmButtonText: 'Ok',
-  background: '#f0f8ff',
-  color: '#f06292',
-  confirmButtonColor: '#f06292', // Pink confirm button color
-  customClass: {
-    popup: 'animated bounceIn'
-  }
-});
-
-
-    // Clear the message from localStorage
-    localStorage.removeItem("formSubmitted");
-  }
-</script>
 
     <!-- Footer Bottom Section -->
     <hr class="my-4 border-gray-400">
@@ -582,13 +429,112 @@
 
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
-<script src="firebase-config.js"></script>
+
 
 <script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+  import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAjkY_eOFoAlyO2RDEukg_2otPBdi-38pQ",
+    authDomain: "micro-store-b6e9e.firebaseapp.com",
+    databaseURL: "https://micro-store-b6e9e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "micro-store-b6e9e",
+    storageBucket: "micro-store-b6e9e.firebaseapp.com",
+    messagingSenderId: "1011897917619",
+    appId: "1:1011897917619:web:ac85ed20a2374c8e13d0c6",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // Form submission handler
+  const form = document.getElementById("microstoreForm");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get form field values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Basic validation
+    if (!name || !email || !contact || !message) {
+      Swal.fire({
+        icon: "warning",
+        title: "Incomplete Form",
+        text: "Please fill out all fields before submitting.",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#ffc107", // Yellow for warnings
+      });
+      return;
+    }
+
+    // Save data to Firebase Database
+    const dbRef = ref(db, "Contact Us Data");
+    push(dbRef, { name, email, contact, message })
+      .then(() => {
+        // Display success SweetAlert
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Thank you for contacting us. We'll get back to you shortly.",
+          confirmButtonText: "OK",
+          background: '#f0f8ff',
+color: '#f06292',
+confirmButtonColor: '#f06292', // Pink confirm button color
+        });
+
+        // Reset the form
+        form.reset();
+      })
+      .catch((error) => {
+        // Display error SweetAlert
+        Swal.fire({
+          icon: "error",
+          title: "Submission Failed",
+          text: "An error occurred while submitting the form. Please try again later.",
+          confirmButtonText: "Try Again",
+          color: '#f06292',
+          confirmButtonColor: "#dc3545", // Red for errors
+        });
+
+        // Log error for debugging
+        console.error("Error submitting form:", error);
+      });
+  });
+</script>
+<script>
+  //sweet alert
+const successMessage = localStorage.getItem("formSubmitted");
+
+if (successMessage) {
+  // Show SweetAlert message instead of a div
+  Swal.fire({
+title: 'Thank You!',
+text: successMessage,
+icon: 'success',
+confirmButtonText: 'Ok',
+background: '#f0f8ff',
+color: '#f06292',
+confirmButtonColor: '#f06292', // Pink confirm button color
+customClass: {
+  popup: 'animated bounceIn'
+}
+});
 
 
-
-
+  // Clear the message from localStorage
+  localStorage.removeItem("formSubmitted");
+}
+</script>
 
 </body>
 </html>
